@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weblab Rezepte ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Versteckt die Scrollbar für die Kategorie-Leiste */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Dunkler Verlauf über den Bildern, damit die weiße Schrift immer lesbar ist */
+        .recipe-card-overlay { 
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%); 
+        }
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body class="bg-gray-50 p-4 md:p-8 font-sans text-gray-800">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-4xl font-black text-gray-900 mb-2 italic">Weblab Rezepte ✨</h1>
+            <p class="text-gray-500 font-medium ml-1">Was kochen wir heute Schönes?</p>
+        </header>
+
+        <div class="flex overflow-x-auto no-scrollbar gap-3 mb-10 pb-2">
+            <button class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95" data-category="Alle">🏠 Alle</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Fisch">🐟 Fisch</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Fleisch">🥩 Fleisch</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Hähnchen">🍗 Hähnchen</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Nudeln">🍝 Nudeln</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Reis">🍚 Reis</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Vegetarisch">🥗 Vegetarisch</button>
+        </div>
+
+        <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </div>
+
+    <script>
+        const recipeGrid = document.getElementById('recipe-grid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        let allRecipes = [];
+        
+        // WICHTIG: Füge hier den Namen jeder neuen .json Datei hinzu, die du im Ordner /rezepte erstellst
+        const recipeFiles = ['pesto-nudeln.json', 'lachs-curry.json', 'haehnchen-curry.json', 'mac-and-cheese.json'];
+
+        async function loadAllRecipes() {
+            try {
+                // Lädt alle JSON Dateien gleichzeitig
+                const fetchPromises = recipeFiles.map(file => 
+                    fetch(`./rezepte/${file}`).then(res => {
+                        if(!res.ok) throw new Error("Datei nicht gefunden");
+                        return res.json();
+                    })
+                );
+                allRecipes = await Promise.all(fetchPromises);
+                displayRecipes(allRecipes);
+            } catch (err) {
+                console.error("Fehler beim Laden der Rezepte:", err);
+                recipeGrid.innerHTML = `<p class="text-center col-span-full text-red-500 font-bold">Fehler: Konnte Rezepte nicht laden. Prüfe den Pfad zum /rezepte Ordner.</p>`;
+            }
+        }
+
+        function displayRecipes(recipes) {
+            recipeGrid.innerHTML = recipes.map(recipe => `
+                <a href="rezept.html?id=${recipe.id}" class="relative block rounded-[2.5rem] shadow-xl overflow-hidden group aspect-[4/5] bg-gray-200">
+                    <img src="${recipe.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+                    
+                    <div class="absolute inset-0 recipe-card-overlay flex flex-col justify-end p-6 text-white text-shadow">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            ${recipe.category.map(cat => `
+                                <span class="bg-orange-600/90 backdrop-blur-sm text-[10px] uppercase font-black px-2 py-1 rounded-md shadow-lg border border-white/10">
+                                    ${cat}
+                                </span>
+                            `).join('')}
+                        </div>
+
+                        <h2 class="text-2xl font-black leading-tight mb-3">${recipe.title}</h2>
+                        
+                        <div class="flex justify-between items-center text-[11px] font-black bg-black/30 backdrop-blur-lg rounded-2xl p-3 border border-white/10 italic">
+                            <span class="flex items-center gap-1.5">⏱ ${recipe.time}</span>
+                            <span class="flex items-center gap-1.5 border-l border-white/20 pl-3 ml-3">👥 ${recipe.servings}</span>
+                            <span class="text-orange-400 border-l border-white/20 pl-3 ml-3 font-black uppercase">🔥 ${recipe.calories}</span>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // Logik für die Filter-Buttons
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Style der Buttons umschalten
+                filterButtons.forEach(b => {
+                    b.classList.replace('bg-orange-500', 'bg-white');
+                    b.classList.replace('text-white', 'text-gray-700');
+                    b.classList.remove('shadow-md');
+                });
+                btn.classList.replace('bg-white', 'bg-orange-500');
+                btn.classList.replace('text-gray-700', 'text-white');
+                btn.classList.add('shadow-md');
+                
+                // Rezepte filtern
+                const cat = btn.dataset.category;
+                const filtered = cat === 'Alle' 
+                    ? allRecipes 
+                    : allRecipes.filter(r => r.category && r.category.includes(cat));
+                
+                displayRecipes(filtered);
+            });
+        });
+
+        // Beim Starten der Seite alles laden
+        loadAllRecipes();
+    </script>
+</body>
+</html>

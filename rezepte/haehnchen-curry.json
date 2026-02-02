@@ -1,0 +1,13 @@
+{
+    "id": "haehnchen-curry",
+    "title": "Schnelles Hähnchen-Curry",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/7e7a257269062fe0861dd934b712b8c6.jpg",
+    "time": "25 Min",
+    "servings": "2 Personen",
+    "calories": "420 kcal",
+    "protein": "40g Protein",
+    "category": ["Hähnchen", "Reis"],
+    "info": "💡 Gut zu wissen: Currypulver wirkt entzündungshemmend. Mit Kokosmilch wird es besonders cremig.",
+    "ingredients": ["400g Hähnchenbrust", "1 rote Paprika", "150ml Kokosmilch light", "2 TL Currypulver", "100g Reis (trocken)", "Frischer Koriander"],
+    "steps": ["Reis nach Packungsanweisung kochen.", "Hähnchen in Streifen schneiden und goldbraun anbraten.", "Paprika dazugeben und kurz mitdünsten.", "Mit Kokosmilch ablöschen, Curry unterrühren und 5 Min. köcheln lassen."]
+}

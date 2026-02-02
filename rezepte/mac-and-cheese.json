@@ -1,0 +1,27 @@
+{
+    "id": "mac-and-cheese",
+    "title": "Protein Mac and Cheese",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/c5d8386f8c877914b990931c240d2188.jpg?w=800",
+    "time": "20 Min",
+    "servings": "2 Personen",
+    "calories": "520 kcal",
+    "protein": "35g Protein",
+    "category": ["Nudeln", "Vegetarisch"],
+    "info": "💡 Gut zu wissen: Wir ersetzen einen Teil der Butter durch körnigen Frischkäse oder Proteinpulver (neutral), um die Sauce extrem cremig und proteinreich zu machen!",
+    "ingredients": [
+        "200g Vollkorn-Makkaroni",
+        "150g fettarmer Streukäse",
+        "200g körniger Frischkäse (püriert)",
+        "100ml fettarme Milch",
+        "1 TL Senf",
+        "Salz, Pfeffer & Muskatnuss",
+        "Optional: Etwas Paprikapulver für die Farbe"
+    ],
+    "steps": [
+        "Nudeln in Salzwasser bissfest kochen.",
+        "Währenddessen den körnigen Frischkäse mit Milch und Senf glatt pürieren.",
+        "Die Mischung in einem Topf leicht erwärmen (nicht kochen!), den Streukäse darin schmelzen lassen.",
+        "Mit Salz, Pfeffer und viel Muskatnuss abschmecken.",
+        "Nudeln abgießen und direkt mit der Käsesauce vermengen."
+    ]
+}
