@@ -1,13 +1,31 @@
 {
-    "id": "pesto-nudeln",
-    "title": "Pesto Nudeln",
+    "id": "protein-pesto",
+    "title": "Pesto Pasta",
     "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/a2cc6434832da0355f50644eafa7033f.jpg",
     "time": "15 Min",
     "servings": "2 Personen",
-    "calories": "450 kcal",
-    "protein": "12g Protein",
-    "category": ["Nudeln"],
-    "info": "Ein Blitzrezept, perfekt für schnelle Abende.",
-    "ingredients": ["250g Spaghetti", "4 EL Olivenöl", "3 Knoblauchzehen"],
-    "steps": ["Pasta kochen.", "Knoblauch dünsten.", "Mischen."]
+    "calories": "640 kcal",
+    "protein": "36g Protein",
+    "category": [
+        "Nudeln",
+        "Vegetarisch"
+    ],
+    "ingredients": [
+        "1/2 Packung Vollkornnudeln (ca. 150g trocken)",
+        "1 Packung Cottage Cheese (Hüttenkäse)",
+        "1 Handvoll Nüsse (Walnüsse oder Cashews)",
+        "3-4 Handvoll Rucola oder Spinat (gewaschen)",
+        "1 reife Avocado (Optional)",
+        "1 Knoblauchzehe",
+        "1 EL Öl (Olivenöl)",
+        "1 Schöpfer Nudelwasser",
+        "Salz & Pfeffer"
+    ],
+    "steps": [
+        "Nüsse vorbereiten: Die Nüsse in einer Pfanne ohne Fett bei mittlerer Hitze leicht anrösten, bis sie duften. Beiseite stellen.",
+        "Vorbereiten: Knoblauch schälen, Avocado entkernen und das Fruchtfleisch herauslöffeln. Den Salat (Spinat oder Rucola) waschen.",
+        "Mixen: Cottage Cheese, Salat, Avocado, Knoblauch, Öl und die gerösteten Nüsse in einen Mixer geben und zu einer cremigen Masse verarbeiten.",
+        "Abschmecken: Jetzt kräftig mit Salz und Pfeffer würzen und nochmals kurz durchmixen, damit sich alles verteilt.",
+        "Vermischen: Die gekochten Nudeln abgießen (einen Schöpfer Nudelwasser auffangen) und alles zusammen in einer Schüssel vermengen, bis die Sauce perfekt an den Nudeln haftet."
+    ]
 }

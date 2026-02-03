@@ -1,0 +1,27 @@
+{
+    "id": "kaesespaetzle",
+    "title": "Käsespätzle",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/7baf81f081aaf370ad53c856b59b0535.jpg",
+    "time": "35 Min",
+    "servings": "2 Personen",
+    "calories": "420 kcal",
+    "protein": "40g Protein",
+    "category": ["Käse", "Vegetarisch"],
+    "ingredients": [
+        "300g Mehl",
+        "4-5 Eier",
+        "70-120ml Wasser (lauwarm)",
+        "1 TL Salz",
+        "250g geriebener Bergkäse oder Emmentaler",
+        "3 mittelgroße Zwiebeln",
+        "2 EL Butter",
+        "Pfeffer aus der Mühle"
+    ],
+    "steps": [
+        "Teig herstellen: Mehl, Eier, Salz und Wasser in einer Schüssel mit einem Kochlöffel kräftig schlagen, bis der Teig Blasen wirft und zäh vom Löffel reißt. Dann 10 Min. ruhen lassen.",
+        "Zwiebeln vorbereiten: Während der Teig ruht, die Zwiebeln schälen, in feine Ringe schneiden und in einer Pfanne mit Butter bei mittlerer Hitze langsam goldbraun und knusprig anbraten.",
+        "Kochen: Einen großen Topf mit reichlich Salzwasser zum Kochen bringen. Den Teig portionsweise durch einen Spätzlehobel in das kochende Wasser drücken oder vom Brett schaben.",
+        "Schichten: Sobald die Spätzle an der Oberfläche schwimmen, mit einem Schaumlöffel herausnehmen. In einer vorgewärmten Schüssel abwechselnd eine Schicht heiße Spätzle und eine Schicht geriebenen Käse verteilen.",
+        "Finale: Mit frisch gemahlenem Pfeffer würzen und die goldbraunen Zwiebeln als Abschluss oben auf dem geschmolzenen Käse verteilen."
+    ]
+}

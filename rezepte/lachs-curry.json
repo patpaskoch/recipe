@@ -1,13 +1,31 @@
 {
     "id": "lachs-curry",
-    "title": "Zucchini-Lachs-Pfanne",
+    "title": "Fisch-Kokos-Curry",
     "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/75d35163c7ffac5301d61304bf6a353c.jpg",
-    "time": "20 Min",
+    "time": "25 Min",
     "servings": "2 Personen",
-    "calories": "350 kcal",
-    "protein": "35g Protein",
-    "category": ["Fisch"],
-    "info": "💡 Gut zu wissen: Dieses Gericht ist Low-Carb und extrem reich an Omega-3-Fettsäuren.",
-    "ingredients": ["300g Lachsfilet", "2 mittelgroße Zucchini", "1 Zwiebel", "1 Knoblauchzehe", "Zitronensaft", "Olivenöl", "Salz & Pfeffer", "Frischer Dill"],
-    "steps": ["Lachs in Würfel schneiden und mit Zitronensaft beträufeln.", "Zucchini würfeln oder in Zoodles schneiden.", "Zwiebel und Knoblauch anbraten, Lachs kurz mitbraten und herausnehmen.", "Zucchini in der Pfanne garen, Lachs wieder dazu und abschmecken."]
+    "calories": "610 kcal",
+    "protein": "34g Protein",
+    "info": "Du kannst statt frischem Gemüse auch einfach eine Handvoll TK-Gemüsemischung nehmen!",
+    "category": ["Fisch", "Reis"],
+    "ingredients": [
+        "2 TK Fischfilets (z.B. Kabeljau oder Lachs)",
+        "1 Dose Kokosmilch (400ml)",
+        "1 Tasse Reis",
+        "1/2 Paprika",
+        "1 Zwiebel",
+        "2 Karotten",
+        "1/2 kleine Zucchini",
+        "1/2 Suppenwürfel",
+        "Etwas Öl zum Anbraten",
+        "Salz & Pfeffer"
+    ],
+    "steps": [
+        "Reis kochen: Den Reis in der doppelten Menge gesalzenem Wasser nach Packungsanleitung garen.",
+        "Vorbereiten: Zwiebel fein würfeln. Paprika, Karotten und Zucchini in mundgerechte Stücke schneiden. Den TK-Fisch kurz antauen lassen und in grobe Würfel schneiden.",
+        "Anbraten: Zwiebel in einer tiefen Pfanne mit etwas Öl glasig dünsten. Das restliche Gemüse hinzufügen und ca. 5 Minuten mit anbraten.",
+        "Ablöschen: Mit der Kokosmilch aufgießen und den halben Suppenwürfel darin auflösen. Alles kurz aufkochen lassen.",
+        "Garen: Die Fischwürfel vorsichtig in die Sauce legen. Bei mittlerer Hitze ca. 5-8 Minuten gar ziehen lassen, bis der Fisch durch ist.",
+        "Abschmecken: Mit Salz und Pfeffer würzen und zusammen mit dem Reis servieren."
+    ]
 }
