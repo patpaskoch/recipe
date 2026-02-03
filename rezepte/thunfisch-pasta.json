@@ -1,0 +1,29 @@
+{
+    "id": "thunfisch-pasta",
+    "title": "Thunfisch-Pasta",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/5d569d49f48ccd0fe995916f5db82d5f.jpg",
+    "time": "15 Min",
+    "servings": "2 Personen",
+    "calories": "440 kcal",
+    "protein": "34g Protein",
+    "category": ["Fisch", "Nudeln"],
+    "info": "Küchen-Hack: Geht mit Frischkäse oder Cottage Cheese! Das Nudelwasser ist der Schlüssel: Die Stärke verbindet alles zu einer cremigen Sauce, die perfekt an den Vollkornnudeln haftet.",
+    "ingredients": [
+        "150g Vollkorn-Nudeln",
+        "1 Dose Thunfisch (im eigenen Saft)",
+        "50ml Creme Fine",
+        "2 EL Frischkäse oder Cottage Cheese",
+        "1 große Zwiebel",
+        "2 Knoblauchzehen",
+        "1/2 Kelle Nudelwasser",
+        "1 EL Kapern (fein gehackt)",
+        "Salz, Pfeffer"
+    ],
+    "steps": [
+        "Pasta kochen: Nudeln garen. Bevor du sie abgießt, schöpfst du einfach eine halbe Tasse vom Kochwasser ab. Kapern währenddessen fein hacken.",
+        "Anbraten: Zwiebel und Knoblauch klein schneiden und in der Pfanne kurz glasig dünsten.",
+        "Sauce mischen: Creme Fine, Frischkäse (oder Cottage Cheese) und das Nudelwasser in die Pfanne geben. Kurz aufkochen lassen, bis die Sauce bindet.",
+        "Alles zusammen: Den Thunfisch, die gehackten Kapern und die Nudeln dazugeben. Alles gut durchmischen, damit die Nudeln die Sauce richtig aufnehmen.",
+        "Abschmecken: Ordentlich Pfeffer und eine Prise Salz drüber – fertig!"
+    ]
+}

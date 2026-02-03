@@ -43,6 +43,12 @@
                 class="w-full bg-white border border-gray-200 rounded-2xl py-4 px-6 pl-12 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all font-medium">
             <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl">🔍</span>
         </div>
+        <div class="flex justify-center mb-8">
+            <button id="random-btn"
+                class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-3 rounded-2xl shadow-lg font-black italic hover:scale-105 transition active:scale-95 flex items-center gap-2">
+                🎲 Was soll ich kochen?
+            </button>
+        </div>
         <div class="flex overflow-x-auto no-scrollbar gap-3 mb-10 pb-2">
             <button
                 class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95"
@@ -80,7 +86,7 @@
         let allRecipes = [];
 
         // Liste deiner JSON Dateien (inklusive Protein-Pesto und Ofen-Curry)
-        const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry.json', 'mac-and-cheese.json', 'lachs-curry.json', 'gemuese-strudel.json'];
+        const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry.json', 'mac-and-cheese.json', 'lachs-curry.json', 'gemuese-strudel.json', 'thunfisch-pasta.json'];
 
         async function loadAllRecipes() {
             try {
@@ -164,6 +170,19 @@
                     b.classList.replace('bg-orange-500', 'bg-white');
                     b.classList.replace('text-white', 'text-gray-700');
                 });
+            }
+        });
+
+        const randomBtn = document.getElementById('random-btn');
+
+        randomBtn.addEventListener('click', () => {
+            if (allRecipes.length > 0) {
+                // Wählt ein zufälliges Rezept aus dem Array aus
+                const randomIndex = Math.floor(Math.random() * allRecipes.length);
+                const randomRecipe = allRecipes[randomIndex];
+
+                // Leitet direkt auf die Detailseite des Zufallsrezepts weiter
+                window.location.href = `rezept.html?id=${randomRecipe.id}`;
             }
         });
 
