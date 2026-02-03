@@ -8,24 +8,19 @@
     "protein": "34g Protein",
     "info": "Du kannst statt frischem Gemüse auch einfach eine Handvoll TK-Gemüsemischung nehmen!",
     "category": ["Fisch", "Reis"],
-    "ingredients": [
-        "2 TK Fischfilets (z.B. Kabeljau oder Lachs)",
+"ingredients": [
+        "2 TK Fischfilets",
         "1 Dose Kokosmilch (400ml)",
-        "1 Tasse Reis",
-        "1/2 Paprika",
-        "1 Zwiebel",
-        "2 Karotten",
-        "1/2 kleine Zucchini",
+        "120g Reis",
         "1/2 Suppenwürfel",
-        "Etwas Öl zum Anbraten",
+        "1 EL Currypulver",
+        "1/2 Paprika, 1 Zwiebel, Karotten & Zucchini",
         "Salz & Pfeffer"
     ],
     "steps": [
-        "Reis kochen: Den Reis in der doppelten Menge gesalzenem Wasser nach Packungsanleitung garen.",
-        "Vorbereiten: Zwiebel fein würfeln. Paprika, Karotten und Zucchini in mundgerechte Stücke schneiden. Den TK-Fisch kurz antauen lassen und in grobe Würfel schneiden.",
-        "Anbraten: Zwiebel in einer tiefen Pfanne mit etwas Öl glasig dünsten. Das restliche Gemüse hinzufügen und ca. 5 Minuten mit anbraten.",
-        "Ablöschen: Mit der Kokosmilch aufgießen und den halben Suppenwürfel darin auflösen. Alles kurz aufkochen lassen.",
-        "Garen: Die Fischwürfel vorsichtig in die Sauce legen. Bei mittlerer Hitze ca. 5-8 Minuten gar ziehen lassen, bis der Fisch durch ist.",
-        "Abschmecken: Mit Salz und Pfeffer würzen und zusammen mit dem Reis servieren."
+        "Vorbereitung: Den Backofen auf 200°C Ober-/Unterhitze vorheizen. Reis nach Packungsanleitung separat kochen.",
+        "Mischen: Die Kokosmilch direkt in einer Auflaufform mit dem zerbröselten Suppenwürfel und dem Currypulver verrühren.",
+        "Schichten: Das geschnittene Gemüse (oder TK-Gemüse) und die noch gefrorenen Fischfilets in die Sauce legen.",
+        "Backen: Die Form für ca. 20–25 Minuten in den Ofen schieben, bis der Fisch gar ist."
     ]
 }
