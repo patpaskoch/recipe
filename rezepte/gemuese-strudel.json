@@ -1,30 +1,29 @@
 {
     "id": "gemuese-strudel",
-    "title": "Herzhafter Gemüse-Strudel",
+    "title": "Gemüse-Strudel",
     "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/e7e1c8ef3eb2e333a3dbf9c0aa0d4672.jpg",
     "time": "45 Min",
-    "servings": "2 Personen",
-    "calories": "560 kcal",
-    "protein": "32g Protein",
-    "info": "Die Essiggurken im Strudel sind der Geheimtipp – sie sorgen für eine feine Säure, die perfekt mit dem geschmolzenen Käse harmoniert!",
+    "servings": "4 Personen",
+    "calories": "500 kcal",
+    "protein": "26g Protein",
     "category": ["Vegetarisch"],
+    "info": "Flexi-Tipp: Sei kreativ! Du kannst jedes Gemüse nehmen, das noch im Kühlschrank liegt – von Zwiebeln über Paprika bis hin zu klein geschnittenem Salat. Alles ist erlaubt!",
     "ingredients": [
-        "1 Pkg Strudelteig oder Blätterteig",
-        "1 Pkg Cottage Cheese",
-        "1 Ei (für die Füllung)",
-        "3 Handvoll geriebener Cheddar",
-        "1/2 Zucchini, 1/2 Paprika, 2 Karotten",
-        "1 Zwiebel & 2 Knoblauchzehen",
+        "1-2 Pkg Strudelteig oder Blätterteig",
+        "1 Pkg Cottage Cheese (ca. 250g)",
+        "1 Ei",
+        "3 massive Handvoll geriebener Cheddar",
+        "Gemüse nach Wahl (z.B. Zucchini, Paprika, Karotten, Zwiebel, Salat)",
+        "2 Knoblauchzehen",
         "3-4 Essiggurken",
-        "1 Becher Naturjoghurt (für die Sauce)",
-        "Salz, Pfeffer & ein Schuss Zitronensaft",
-        "Optional: Senf & Sesam"
+        "1 Becher Naturjoghurt (250g für die Sauce)",
+        "Salz, Pfeffer & ein Schuss Zitronensaft"
     ],
     "steps": [
-        "Vorbereitung: Den Backofen auf 200°C vorheizen. Zucchini, Paprika, Karotten, Zwiebeln und Essiggurken in sehr feine Würfel schneiden.",
-        "Füllung anrühren: Cottage Cheese, Ei, Cheddar und Knoblauch vermengen. Das Gemüse unterheben und kräftig mit Salz und Pfeffer abschmecken.",
-        "Rollen & Backen: Die Masse auf dem Teig verteilen, einrollen und ca. 25–30 Minuten goldbraun backen.",
-        "Sauce zubereiten: In der Zwischenzeit den Joghurt mit Salz, Pfeffer und einem Spritzer Zitronensaft (oder etwas Gurkenwasser aus dem Glas) cremig rühren.",
-        "Servieren: Den heißen Strudel zusammen mit der kühlen Joghurtsauce genießen."
+        "Vorbereitung: Den Backofen auf 200°C vorheizen. Das vorhandene Gemüse (und ggf. den Salat) sowie die Essiggurken fein würfeln.",
+        "Füllung anrühren: Cottage Cheese, Ei, Cheddar und den gepressten Knoblauch vermengen. Das gewürfelte Gemüse unterheben und kräftig mit Salz und Pfeffer abschmecken.",
+        "Rollen & Backen: Die Masse auf dem Teig verteilen, einrollen und auf einem Backblech ca. 25–30 Minuten goldbraun backen.",
+        "Joghurtsauce: Währenddessen den Joghurt mit Salz, Pfeffer und Zitronensaft (oder Gurkenwasser) glatt rühren.",
+        "Servieren: Den Strudel in Portionen schneiden und mit der kühlen Sauce servieren."
     ]
 }

@@ -1,27 +1,27 @@
 {
     "id": "mac-and-cheese",
-    "title": "Protein Mac and Cheese",
+    "title": "Mac and Cheese",
     "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/c5d8386f8c877914b990931c240d2188.jpg?w=800",
-    "time": "20 Min",
+    "time": "30 Min",
     "servings": "2 Personen",
-    "calories": "520 kcal",
-    "protein": "35g Protein",
+    "calories": "560 kcal",
+    "protein": "41g Protein",
     "category": ["Nudeln", "Vegetarisch"],
-    "info": "💡 Gut zu wissen: Wir ersetzen einen Teil der Butter durch körnigen Frischkäse oder Proteinpulver (neutral), um die Sauce extrem cremig und proteinreich zu machen!",
     "ingredients": [
         "200g Vollkorn-Makkaroni",
         "150g fettarmer Streukäse",
         "200g körniger Frischkäse (püriert)",
         "100ml fettarme Milch",
+        "80g Hirtenkäse Light (zum Drüberbröseln)",
         "1 TL Senf",
-        "Salz, Pfeffer & Muskatnuss",
-        "Optional: Etwas Paprikapulver für die Farbe"
+        "Salz, Pfeffer & viel Muskatnuss",
+        "Paprikapulver"
     ],
     "steps": [
-        "Nudeln in Salzwasser bissfest kochen.",
-        "Währenddessen den körnigen Frischkäse mit Milch und Senf glatt pürieren.",
-        "Die Mischung in einem Topf leicht erwärmen (nicht kochen!), den Streukäse darin schmelzen lassen.",
-        "Mit Salz, Pfeffer und viel Muskatnuss abschmecken.",
-        "Nudeln abgießen und direkt mit der Käsesauce vermengen."
+        "Vorbereitung: Ofen auf 200°C vorheizen. Nudeln in Salzwasser bissfest kochen.",
+        "Sauce: Körnigen Frischkäse mit Milch, Senf und Gewürzen glatt pürieren.",
+        "Mischen: Sauce im Topf erwärmen, Streukäse darin schmelzen und die Nudeln unterrühren.",
+        "Gratinieren: Alles in eine Auflaufform füllen. Den Light-Hirtenkäse mit den Fingern fein darüber zerbröseln.",
+        "Backen: Für ca. 12 Minuten goldbraun überbacken."
     ]
 }
