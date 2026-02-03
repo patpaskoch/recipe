@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Versteckt die Scrollbar für die Kategorie-Leiste */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Optimierter Verlauf: Oben fast transparent (hell), unten dunkel */
-        .recipe-card-overlay { 
-            background: linear-gradient(to top, 
-                rgba(0,0,0,0.9) 0%, 
-                rgba(0,0,0,0.5) 40%, 
-                rgba(0,0,0,0) 80%); 
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Optimierter Verlauf: Oben fast transparent (hell), unten dunkel */
+        .recipe-card-overlay {
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.9) 0%,
+                    rgba(0, 0, 0, 0.5) 40%,
+                    rgba(0, 0, 0, 0) 80%);
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 p-4 md:p-8 font-sans text-gray-800">
 
     <div class="max-w-6xl mx-auto">
@@ -27,35 +38,55 @@
             <h1 class="text-4xl font-black text-gray-900 mb-2 italic">Weblab Rezepte ✨</h1>
             <p class="text-gray-500 font-medium ml-1">Was kochen wir heute Schönes?</p>
         </header>
-
+        <div class="relative mb-6">
+            <input type="text" id="search-input" placeholder="Rezepte suchen... (z.B. Pesto, Fisch)"
+                class="w-full bg-white border border-gray-200 rounded-2xl py-4 px-6 pl-12 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all font-medium">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl">🔍</span>
+        </div>
         <div class="flex overflow-x-auto no-scrollbar gap-3 mb-10 pb-2">
-            <button class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95" data-category="Alle">🏠 Alle</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Fisch">🐟 Fisch</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Fleisch">🥩 Fleisch</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Hähnchen">🍗 Hähnchen</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Nudeln">🍝 Nudeln</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Reis">🍚 Reis</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Vegetarisch">🥗 Vegetarisch</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95" data-category="Käse">🧀 Käse</button>
+            <button
+                class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95"
+                data-category="Alle">🏠 Alle</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Fisch">🐟 Fisch</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Fleisch">🥩 Fleisch</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Hähnchen">🍗 Hähnchen</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Nudeln">🍝 Nudeln</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Reis">🍚 Reis</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Vegetarisch">🥗 Vegetarisch</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
+                data-category="Käse">🧀 Käse</button>
         </div>
 
         <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
+        </div>
     </div>
 
     <script>
         const recipeGrid = document.getElementById('recipe-grid');
         const filterButtons = document.querySelectorAll('.filter-btn');
         let allRecipes = [];
-        
-        // Liste deiner JSON Dateien
-const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry.json', 'mac-and-cheese.json', 'lachs-curry.json', 'gemuese-strudel.json'];
+
+        // Liste deiner JSON Dateien (inklusive Protein-Pesto und Ofen-Curry)
+        const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry.json', 'mac-and-cheese.json', 'lachs-curry.json', 'gemuese-strudel.json'];
 
         async function loadAllRecipes() {
             try {
-                const fetchPromises = recipeFiles.map(file => 
+                const fetchPromises = recipeFiles.map(file =>
                     fetch(`./rezepte/${file}`).then(res => {
-                        if(!res.ok) throw new Error("Datei " + file + " nicht gefunden");
+                        if (!res.ok) throw new Error("Datei " + file + " nicht gefunden");
                         return res.json();
                     })
                 );
@@ -63,7 +94,7 @@ const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry
                 displayRecipes(allRecipes);
             } catch (err) {
                 console.error("Fehler beim Laden der Rezepte:", err);
-                recipeGrid.innerHTML = `<p class="text-center col-span-full text-red-500 font-bold">Fehler beim Laden der Rezepte. Stelle sicher, dass die Dateien im Ordner /rezepte/ liegen.</p>`;
+                recipeGrid.innerHTML = `<p class="text-center col-span-full text-red-500 font-bold">Fehler beim Laden der Rezepte.</p>`;
             }
         }
 
@@ -86,7 +117,7 @@ const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry
                         
                         <div class="flex justify-between items-center text-[11px] font-black bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 italic shadow-2xl">
                             <span class="flex items-center gap-1.5">⏱ ${recipe.time}</span>
-                            <span class="flex items-center gap-1.5 border-l border-white/20 pl-3 ml-3">👥 ${recipe.servings}</span>
+                            <span class="flex items-center gap-1.5 border-l border-white/20 pl-3 ml-3">💪 ${recipe.protein || 'N/A'}</span>
                             <span class="text-orange-400 border-l border-white/20 pl-3 ml-3 font-black uppercase">🔥 ${recipe.calories}</span>
                         </div>
                     </div>
@@ -104,17 +135,40 @@ const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry
                 btn.classList.replace('bg-white', 'bg-orange-500');
                 btn.classList.replace('text-gray-700', 'text-white');
                 btn.classList.add('shadow-md');
-                
+
                 const cat = btn.dataset.category;
-                const filtered = cat === 'Alle' 
-                    ? allRecipes 
+                const filtered = cat === 'Alle'
+                    ? allRecipes
                     : allRecipes.filter(r => r.category && r.category.includes(cat));
-                
+
                 displayRecipes(filtered);
             });
+        });
+
+        const searchInput = document.getElementById('search-input');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+
+            // Filtert Rezepte nach Titel oder Kategorien
+            const filtered = allRecipes.filter(r =>
+                r.title.toLowerCase().includes(query) ||
+                (r.category && r.category.some(c => c.toLowerCase().includes(query)))
+            );
+
+            displayRecipes(filtered);
+
+            // Optional: Filter-Buttons zurücksetzen, wenn gesucht wird
+            if (query !== "") {
+                filterButtons.forEach(b => {
+                    b.classList.replace('bg-orange-500', 'bg-white');
+                    b.classList.replace('text-white', 'text-gray-700');
+                });
+            }
         });
 
         loadAllRecipes();
     </script>
 </body>
+
 </html>
