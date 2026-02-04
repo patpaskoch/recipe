@@ -1,26 +1,28 @@
 {
     "id": "lachs-curry",
-    "title": "Fisch-Kokos-Curry",
+    "title": "Lachs-Curry",
     "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/75d35163c7ffac5301d61304bf6a353c.jpg",
     "time": "25 Min",
     "servings": "2 Personen",
     "calories": "610 kcal",
     "protein": "34g Protein",
-    "info": "Du kannst statt frischem Gemüse auch einfach eine Handvoll TK-Gemüsemischung nehmen!",
     "category": ["Fisch", "Reis"],
-"ingredients": [
-        "2 TK Fischfilets",
-        "1 Dose Kokosmilch (400ml)",
+    "info": "Nimm einfach, was an Gemüse da ist (Kühlschrank oder TK). Perfekt zum Reste verwerten.",
+    "ingredients": [
+        "2 Lachsfilets",
         "120g Reis",
+        "1 Dose Kokosmilch",
+        "1/2 Dose Wasser",
         "1/2 Suppenwürfel",
         "1 EL Currypulver",
-        "1/2 Paprika, 1 Zwiebel, Karotten & Zucchini",
+        "Gemüse (frisch oder TK)",
         "Salz & Pfeffer"
     ],
     "steps": [
-        "Vorbereitung: Den Backofen auf 200°C Ober-/Unterhitze vorheizen. Reis nach Packungsanleitung separat kochen.",
-        "Mischen: Die Kokosmilch direkt in einer Auflaufform mit dem zerbröselten Suppenwürfel und dem Currypulver verrühren.",
-        "Schichten: Das geschnittene Gemüse (oder TK-Gemüse) und die noch gefrorenen Fischfilets in die Sauce legen.",
-        "Backen: Die Form für ca. 20–25 Minuten in den Ofen schieben, bis der Fisch gar ist."
+        "Reis kochen. Ofen auf 200°C vorheizen.",
+        "Kokosmilch, Wasser, Curry und Suppenwürfel in einer ofenfesten Pfanne kurz auf dem Herd verrühren.",
+        "Gemüse und Fisch in die Sauce legen.",
+        "Pfanne für 20–25 Min. in den Ofen schieben.",
+        "Mit Reis servieren."
     ]
 }

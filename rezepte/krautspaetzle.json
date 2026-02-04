@@ -1,0 +1,27 @@
+{
+    "id": "krautspaetzle",
+    "title": "Herzhafte Krautspätzle",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/1e4703a9552734244f8281527337d52d.jpg",
+    "time": "20 Min",
+    "servings": "2-3 Personen",
+    "calories": "550 kcal",
+    "protein": "18g Protein",
+    "category": ["Fleisch"],
+    "info": "Kümmel ist wichtig für den Geschmack und die Verdauung. Wer mag, mischt am Ende noch Bergkäse drunter.",
+    "ingredients": [
+        "500g Spätzle (frisch oder getrocknet)",
+        "500g Sauerkraut (abgetropft)",
+        "2 große Zwiebeln",
+        "100g Speckwürfel",
+        "2 EL Butter oder Schmalz",
+        "Salz, Pfeffer & Kümmel",
+        "Schuss Gemüsebrühe oder Weißwein"
+    ],
+    "steps": [
+        "Speck und Zwiebelwürfel in Butter oder Schmalz glasig bis braun anbraten.",
+        "Sauerkraut dazugeben, mit Kümmel, Salz und Pfeffer würzen und ca. 10 Min. schmoren.",
+        "Bei Bedarf mit einem Schuss Brühe oder Wein ablöschen.",
+        "Spätzle unter das Kraut mischen und mitanbraten, bis sie leicht knusprig werden.",
+        "Nochmal abschmecken und fertig."
+    ]
+}

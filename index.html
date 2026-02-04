@@ -17,16 +17,13 @@
             scrollbar-width: none;
         }
 
-        /* Optimierter Verlauf: Oben fast transparent (hell), unten dunkel */
-        .recipe-card-overlay {
-            background: linear-gradient(to top,
-                    rgba(0, 0, 0, 0.9) 0%,
-                    rgba(0, 0, 0, 0.5) 40%,
-                    rgba(0, 0, 0, 0) 80%);
+        .text-shadow {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
         }
 
-        .text-shadow {
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        /* Sanfter Hover-Effekt für die Karten */
+        .recipe-card {
+            transition: transform 0.3s ease, shadow 0.3s ease;
         }
     </style>
 </head>
@@ -35,104 +32,110 @@
 
     <div class="max-w-6xl mx-auto">
         <header class="mb-8">
-            <h1 class="text-4xl font-black text-gray-900 mb-2 italic">Weblab Rezepte ✨</h1>
+            <h1 class="text-4xl font-black text-gray-900 mb-2 italic tracking-tighter">Weblab Rezepte ✨</h1>
             <p class="text-gray-500 font-medium ml-1">Was kochen wir heute Schönes?</p>
         </header>
+
         <div class="relative mb-6">
-            <input type="text" id="search-input" placeholder="Rezepte suchen... (z.B. Pesto, Fisch)"
+            <input type="text" id="search-input" placeholder="Rezepte suchen... (z.B. Pasta, Fisch)"
                 class="w-full bg-white border border-gray-200 rounded-2xl py-4 px-6 pl-12 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all font-medium">
             <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl">🔍</span>
         </div>
+
         <div class="flex justify-center mb-8">
             <button id="random-btn"
-                class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-3 rounded-2xl shadow-lg font-black italic hover:scale-105 transition active:scale-95 flex items-center gap-2">
+                class="bg-gradient-to-r from-purple-600 to-indigo-700 text-white px-8 py-3 rounded-2xl shadow-lg font-black italic hover:scale-105 transition active:scale-95 flex items-center gap-2">
                 🎲 Was soll ich kochen?
             </button>
         </div>
+
         <div class="flex overflow-x-auto no-scrollbar gap-3 mb-10 pb-2">
-            <button
-                class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95"
-                data-category="Alle">🏠 Alle</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Fisch">🐟 Fisch</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Fleisch">🥩 Fleisch</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Hähnchen">🍗 Hähnchen</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Nudeln">🍝 Nudeln</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Reis">🍚 Reis</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Vegetarisch">🥗 Vegetarisch</button>
-            <button
-                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition active:scale-95"
-                data-category="Käse">🧀 Käse</button>
+            <button class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95" data-category="Alle">🏠 Alle</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Fisch">🐟 Fisch</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Fleisch">🥩 Fleisch</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Hähnchen">🍗 Hähnchen</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Nudeln">🍝 Nudeln</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Vegetarisch">🥗 Vegetarisch</button>
+            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Käse">🧀 Käse</button>
         </div>
 
-        <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        </div>
+        <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
     </div>
 
     <script>
         const recipeGrid = document.getElementById('recipe-grid');
         const filterButtons = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('search-input');
         let allRecipes = [];
 
-        // Liste deiner JSON Dateien (inklusive Protein-Pesto und Ofen-Curry)
-        const recipeFiles = ['pesto-nudeln.json', 'kaesespaetzle.json', 'haehnchen-curry.json', 'mac-and-cheese.json', 'lachs-curry.json', 'gemuese-strudel.json', 'thunfisch-pasta.json'];
-
+        // LÄDT DIE DATEINAMEN AUS DER ZENTRALEN JSON IM ROOT
         async function loadAllRecipes() {
             try {
+                // 1. Hole die Liste der Dateinamen
+                const listRes = await fetch('./rezepte.json');
+                const recipeFiles = await listRes.json();
+
+                // 2. Lade jedes einzelne Rezept-JSON
                 const fetchPromises = recipeFiles.map(file =>
                     fetch(`./rezepte/${file}`).then(res => {
-                        if (!res.ok) throw new Error("Datei " + file + " nicht gefunden");
+                        if (!res.ok) throw new Error(`Fehler bei ${file}`);
                         return res.json();
                     })
                 );
+                
                 allRecipes = await Promise.all(fetchPromises);
                 displayRecipes(allRecipes);
             } catch (err) {
-                console.error("Fehler beim Laden der Rezepte:", err);
-                recipeGrid.innerHTML = `<p class="text-center col-span-full text-red-500 font-bold">Fehler beim Laden der Rezepte.</p>`;
+                console.error("Ladefehler:", err);
+                recipeGrid.innerHTML = `<p class="col-span-full text-center text-red-500 font-bold">Rezepte konnten nicht geladen werden. Prüfe die rezepte.json!</p>`;
             }
         }
 
         function displayRecipes(recipes) {
+            if (recipes.length === 0) {
+                recipeGrid.innerHTML = `<p class="col-span-full text-center py-10 text-gray-400 font-medium text-lg italic">Nichts gefunden... 🍕</p>`;
+                return;
+            }
+
             recipeGrid.innerHTML = recipes.map(recipe => `
-                <a href="rezept.html?id=${recipe.id}" class="relative block rounded-[2.5rem] shadow-xl overflow-hidden group aspect-[4/5] bg-gray-200">
-                    <img src="${recipe.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+                <a href="rezept.html?id=${recipe.id}" class="recipe-card relative block rounded-[2.2rem] shadow-lg overflow-hidden group h-60 bg-gray-200 border border-white">
+                    <img src="${recipe.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     
-                    <div class="absolute inset-0 recipe-card-overlay flex flex-col justify-end p-6 text-white">
-                        
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            ${recipe.category ? recipe.category.map(cat => `
-                                <span class="bg-orange-600/90 backdrop-blur-sm text-[10px] uppercase font-black px-2 py-1 rounded-md shadow-lg border border-white/10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute inset-0 p-5 flex flex-col justify-between text-white">
+                        <div class="flex flex-wrap gap-2">
+                            ${(recipe.category || []).map(cat => `
+                                <span class="bg-white/20 backdrop-blur-lg text-[9px] uppercase font-black px-2.5 py-1 rounded-lg border border-white/20 tracking-wider">
                                     ${cat}
                                 </span>
-                            `).join('') : ''}
+                            `).join('')}
                         </div>
 
-                        <h2 class="text-2xl font-black leading-tight mb-3 text-shadow">${recipe.title}</h2>
-                        
-                        <div class="flex justify-between items-center text-[11px] font-black bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 italic shadow-2xl">
-                            <span class="flex items-center gap-1.5">⏱ ${recipe.time}</span>
-                            <span class="flex items-center gap-1.5 border-l border-white/20 pl-3 ml-3">💪 ${recipe.protein || 'N/A'}</span>
-                            <span class="text-orange-400 border-l border-white/20 pl-3 ml-3 font-black uppercase">🔥 ${recipe.calories}</span>
+                        <div>
+                            <h2 class="text-xl font-black leading-tight mb-3 text-shadow italic">${recipe.title}</h2>
+                            <div class="flex gap-2">
+                                <div class="bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-[10px] font-bold italic flex items-center gap-1.5">
+                                    <span class="opacity-60 text-xs">⏱</span> ${recipe.time}
+                                </div>
+                                <div class="bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-[10px] font-bold italic flex items-center gap-1.5">
+                                    <span class="opacity-60 text-xs">💪</span> ${recipe.protein || 'N/A'}
+                                </div>
+                                <div class="bg-orange-500/40 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 text-[10px] font-black italic shadow-lg flex items-center gap-1.5">
+                                    <span class="opacity-80 text-xs">🔥</span> ${recipe.calories}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </a>
             `).join('');
         }
 
+        // Filter-Logik
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
+                // Style-Wechsel
                 filterButtons.forEach(b => {
                     b.classList.replace('bg-orange-500', 'bg-white');
                     b.classList.replace('text-white', 'text-gray-700');
@@ -142,52 +145,43 @@
                 btn.classList.replace('text-gray-700', 'text-white');
                 btn.classList.add('shadow-md');
 
+                searchInput.value = ""; // Suche leeren
                 const cat = btn.dataset.category;
-                const filtered = cat === 'Alle'
-                    ? allRecipes
-                    : allRecipes.filter(r => r.category && r.category.includes(cat));
-
+                const filtered = cat === 'Alle' ? allRecipes : allRecipes.filter(r => r.category?.includes(cat));
                 displayRecipes(filtered);
             });
         });
 
-        const searchInput = document.getElementById('search-input');
-
+        // Such-Logik
         searchInput.addEventListener('input', () => {
             const query = searchInput.value.toLowerCase();
-
-            // Filtert Rezepte nach Titel oder Kategorien
-            const filtered = allRecipes.filter(r =>
-                r.title.toLowerCase().includes(query) ||
-                (r.category && r.category.some(c => c.toLowerCase().includes(query)))
+            const filtered = allRecipes.filter(r => 
+                r.title.toLowerCase().includes(query) || 
+                r.category?.some(c => c.toLowerCase().includes(query))
             );
-
             displayRecipes(filtered);
-
-            // Optional: Filter-Buttons zurücksetzen, wenn gesucht wird
-            if (query !== "") {
-                filterButtons.forEach(b => {
-                    b.classList.replace('bg-orange-500', 'bg-white');
-                    b.classList.replace('text-white', 'text-gray-700');
-                });
-            }
         });
 
-        const randomBtn = document.getElementById('random-btn');
-
-        randomBtn.addEventListener('click', () => {
+        // Zufalls-Button
+        document.getElementById('random-btn').addEventListener('click', () => {
             if (allRecipes.length > 0) {
-                // Wählt ein zufälliges Rezept aus dem Array aus
-                const randomIndex = Math.floor(Math.random() * allRecipes.length);
-                const randomRecipe = allRecipes[randomIndex];
-
-                // Leitet direkt auf die Detailseite des Zufallsrezepts weiter
+                const randomRecipe = allRecipes[Math.floor(Math.random() * allRecipes.length)];
                 window.location.href = `rezept.html?id=${randomRecipe.id}`;
             }
         });
 
+        // Anti-Sleep Hack
+        let wakeLock = null;
+        async function requestWakeLock() {
+            try {
+                if ('wakeLock' in navigator) {
+                    wakeLock = await navigator.wakeLock.request('screen');
+                }
+            } catch (err) {}
+        }
+        requestWakeLock();
+
         loadAllRecipes();
     </script>
 </body>
-
 </html>
