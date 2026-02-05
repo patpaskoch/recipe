@@ -1,0 +1,32 @@
+{
+    "id": "spaghetti-bolognese",
+    "title": "Spaghetti Bolognese",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/190ae8405343a963cc76f84550cde948.jpg",
+    "time": "25 Min",
+    "servings": "2 Personen",
+    "calories": "760 kcal",
+    "protein": "43g Protein",
+    "category": ["Nudeln", "Fleisch", "Vegetarisch"],
+    "info": "Geht auch vegetarisch: Lass das Fleisch einfach weg und verdopple die Menge an Karotten und Zucchini. Nutze die leere Tomatendose direkt zum Wasserabmessen!",
+    "ingredients": [
+        "250g Vollkorn-Spaghetti (halbe Packung)",
+        "250g Rinderhackfleisch (mager)",
+        "1 Dose stückige Tomaten (400g)",
+        "1 EL Tomatenmark",
+        "2 Karotten",
+        "1/2 Zucchini",
+        "1 Zwiebel & 2 Knoblauchzehen",
+        "1 EL Ketchup",
+        "1 Suppenwürfel (Rind oder Gemüse)",
+        "Wasser (leere Tomatendose zur Hälfte nutzen)",
+        "Salz, Pfeffer, Oregano & Paprika"
+    ],
+    "steps": [
+        "Vorbereitung: Zwiebel, Knoblauch, Karotten und Zucchini sehr fein würfeln oder raspeln.",
+        "Anbraten: Rinderhackfleisch in einem Topf scharf anbraten. Dann Gemüse, Zwiebeln und Knoblauch kurz mitbraten.",
+        "Saucen-Basis: Tomatenmark hinzufügen, kurz mitrösten, dann die Dose Tomaten dazugeben.",
+        "Würzen & Ablöschen: Den Suppenwürfel direkt in die Sauce krümeln. Die leere Tomatendose zur Hälfte mit Wasser füllen, Ketchup und Gewürze hinzufügen und alles in den Topf gießen.",
+        "Köcheln: Bei mittlerer Hitze ca. 10-15 Min. köcheln lassen, während die Vollkorn-Spaghetti kochen.",
+        "Servieren: Nudeln mit der Sauce mischen und in zwei Schüsseln anrichten."
+    ]
+}

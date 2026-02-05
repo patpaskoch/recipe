@@ -1,27 +1,30 @@
 {
     "id": "mac-and-cheese",
-    "title": "Mac and Cheese",
+    "title": "Cheddar Mac & Cheese",
     "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/c5d8386f8c877914b990931c240d2188.jpg?w=800",
-    "time": "30 Min",
+    "time": "20 Min",
     "servings": "2 Personen",
-    "calories": "560 kcal",
-    "protein": "41g Protein",
-    "category": ["Nudeln", "Vegetarisch"],
+    "calories": "880 kcal",
+    "protein": "48g Protein",
+    "category": ["Nudeln", "Käse"],
+    "info": "Du kannst super einfach TK-Gemüse (z.B. Erbsen oder Brokkoli) direkt mit in die Auflaufform geben, bevor der Käse drüberkommt!",
     "ingredients": [
-        "200g Vollkorn-Makkaroni",
-        "150g fettarmer Streukäse",
-        "200g körniger Frischkäse (püriert)",
-        "100ml fettarme Milch",
-        "80g Hirtenkäse Light (zum Drüberbröseln)",
-        "1 TL Senf",
-        "Salz, Pfeffer & viel Muskatnuss",
-        "Paprikapulver"
+        "250g Vollkorn Makkaroni (halbe Packung)",
+        "1 Packung Cheddar (gerieben)",
+        "1 Packung Körniger Frischkäse",
+        "100ml Milch",
+        "1/2 Tasse Nudelwasser",
+        "1 EL Tomatenmark",
+        "1 EL Senf",
+        "Salz, Pfeffer, viel Muskat & Paprika",
+        "Optional: TK-Gemüse"
     ],
     "steps": [
-        "Vorbereitung: Ofen auf 200°C vorheizen. Nudeln in Salzwasser bissfest kochen.",
-        "Sauce: Körnigen Frischkäse mit Milch, Senf und Gewürzen glatt pürieren.",
-        "Mischen: Sauce im Topf erwärmen, Streukäse darin schmelzen und die Nudeln unterrühren.",
-        "Gratinieren: Alles in eine Auflaufform füllen. Den Light-Hirtenkäse mit den Fingern fein darüber zerbröseln.",
-        "Backen: Für ca. 12 Minuten goldbraun überbacken."
+        "Ofen auf 200°C vorheizen. Makkaroni kochen und beim Abgießen eine halbe Tasse Nudelwasser auffangen.",
+        "In einem zweiten Topf Milch, Nudelwasser, den ganzen körnigen Frischkäse, Tomatenmark, Senf und Gewürze kurz erwärmen und verrühren.",
+        "Topf vom Herd nehmen und ein Drittel vom Cheddar nur grob unterrühren (nicht pürieren!).",
+        "Nudeln (und optional das TK-Gemüse) in die Auflaufform geben, die Sauce darüber verteilen.",
+        "Den restlichen Cheddar aus der Packung großzügig darüberstreuen.",
+        "Ca. 12-15 Min. backen, bis der Käse goldbraun ist und richtig Fäden zieht."
     ]
 }

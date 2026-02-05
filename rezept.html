@@ -68,22 +68,23 @@
                             </div>
                         ` : ''}
 
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
                             <div class="lg:col-span-1">
-                                <details open class="group bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden transition-all duration-300">
-                                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center bg-gray-50/50 group-open:bg-white transition-colors">
+                                <details open class="group/collapsible bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
+                                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center bg-gray-50/50 group-open/collapsible:bg-white transition-colors">
                                         <h3 class="text-2xl font-black italic flex items-center gap-2">🛒 Zutaten</h3>
-                                        <span class="transition-transform duration-300 group-open:rotate-180 text-orange-500 text-2xl font-black">↓</span>
+                                        <span class="transition-transform duration-300 group-open/collapsible:rotate-180 text-orange-500 text-2xl font-black">↓</span>
                                     </summary>
-                                    
                                     <div class="p-6 pt-2">
-                                        <ul class="space-y-4">
-                                            ${data.ingredients.map(ing => `
-                                                <li class="flex items-start gap-3 pb-3 border-b border-gray-50 last:border-0 group/item cursor-pointer">
-                                                    <input type="checkbox" class="mt-1 w-5 h-5 accent-orange-500 rounded border-gray-300">
-                                                    <span class="text-gray-700 font-medium text-lg leading-tight group-has-[:checked]:opacity-30 group-has-[:checked]:line-through transition-all">
-                                                        ${ing}
-                                                    </span>
+                                        <ul class="space-y-1">
+                                            ${data.ingredients.map((ing, i) => `
+                                                <li class="border-b border-gray-50 last:border-0">
+                                                    <label class="flex items-start gap-3 py-3 group cursor-pointer">
+                                                        <input type="checkbox" class="mt-1 w-5 h-5 accent-orange-500 rounded border-gray-300 shrink-0">
+                                                        <span class="text-gray-700 font-medium text-lg leading-tight transition-all group-has-[:checked]:opacity-30 group-has-[:checked]:line-through">
+                                                            ${ing}
+                                                        </span>
+                                                    </label>
                                                 </li>
                                             `).join('')}
                                         </ul>
@@ -92,15 +93,14 @@
                             </div>
 
                             <div class="lg:col-span-2">
-                                <h3 class="text-2xl font-black mb-6 italic flex items-center gap-2">👨‍🍳 Zubereitung</h3>
-                                <div class="space-y-10">
+                                <h3 class="text-3xl font-black mb-8 italic flex items-center gap-3">👨‍🍳 Zubereitung</h3>
+                                <div class="space-y-12">
                                     ${data.steps.map((step, i) => `
-                                        <label class="group block border-b border-gray-100 pb-8 last:border-0 cursor-pointer">
-                                            <div class="flex items-center gap-3 mb-4">
-                                                <input type="checkbox" class="w-7 h-7 accent-orange-500 rounded-lg border-2 border-gray-300 transition-transform group-active:scale-90 shrink-0">
+                                        <label class="group block border-b border-gray-100 pb-10 last:border-0 cursor-pointer">
+                                            <div class="flex items-center gap-4 mb-4">
+                                                <input type="checkbox" class="w-8 h-8 accent-orange-500 rounded-lg border-2 border-gray-300 transition-all group-active:scale-90 shrink-0">
                                                 <span class="text-orange-500 font-black text-2xl italic tracking-tight">Schritt ${i + 1}</span>
                                             </div>
-                                            
                                             <p class="text-gray-700 leading-relaxed text-xl font-medium transition-all group-has-[:checked]:opacity-20 group-has-[:checked]:line-through">
                                                 ${step}
                                             </p>
@@ -108,6 +108,7 @@
                                     `).join('')}
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="mt-16 pt-8 border-t-4 border-gray-50 text-center">
