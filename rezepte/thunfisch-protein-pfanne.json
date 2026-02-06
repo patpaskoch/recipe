@@ -1,0 +1,27 @@
+{
+    "id": "thunfisch-protein-pfanne",
+    "title": "Turbo Thunfisch-Pfanne",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/52350d03e897c36d57b523cfa6c394b4.jpg",
+    "time": "12 Min",
+    "servings": "2 Personen",
+    "calories": "520 kcal",
+    "protein": "45g Protein",
+    "category": ["Schnell", "Fisch"],
+    "info": "Schnell, gesund und macht extrem satt!",
+    "ingredients": [
+        "2 Dosen Thunfisch (im eigenen Saft)",
+        "1 große Dose Kichererbsen (ca. 480g Abtropfgewicht)",
+        "1 rote Paprika",
+        "1 Zwiebel",
+        "2 EL Frischkäse (oder Topfen)",
+        "Salz, Pfeffer & ein Spritzer Zitrone",
+        "Optional: Zwei Handvoll Blattspinat"
+    ],
+    "steps": [
+        "Vorbereitung: Den Thunfisch und die Kichererbsen gründlich abspülen und in einem Sieb abtropfen lassen.",
+        "Anbraten: Die Zwiebel und die ganze Paprika klein schneiden und in einer Pfanne mit etwas Öl ca. 4-5 Min. dünsten.",
+        "Mischen: Beide Dosen Thunfisch und alle Kichererbsen dazugeben und unter Rühren ca. 2-3 Min. erhitzen.",
+        "Cremig machen: Den Frischkäse (oder Topfen) einrühren, bis alles schön gebunden ist. Mit reichlich Salz, Pfeffer und Zitrone abschmecken.",
+        "Finish: Den Blattspinat kurz unterheben, bis er leicht zusammenfällt, und dann auf zwei Schüsseln verteilen."
+    ]
+}

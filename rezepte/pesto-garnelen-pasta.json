@@ -1,0 +1,27 @@
+{
+    "id": "pesto-garnelen-pasta",
+    "title": "Pesto-Pasta mit Garnelen",
+    "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/3e6f14dd49c6e42b5fa7d77ad5be458e.jpg",
+    "time": "15 Min",
+    "servings": "2 Person",
+    "calories": "680 kcal",
+    "protein": "46g Protein",
+    "category": ["Nudeln", "Fisch"],
+    "info": "Das Geheimnis ist der Topfen: Er macht das Pesto extrem cremig und liefert massiv Protein nach dem Laufen. Nimm 1-2 EL Nudelwasser für die perfekte Sauce!",
+    "ingredients": [
+        "1/2 Pack Vollkornpasta",
+        "1 Pack Garnelen (Schrimps)",
+        "2 EL Pesto Rosso",
+        "50g Topfen (Magerquark)",
+        "1 Handvoll Kirschtomaten",
+        "1 Knoblauchzehe",
+        "Optional: Rucola oder Basilikum"
+    ],
+    "steps": [
+        "Nudeln kochen: Die Vollkornpasta in Salzwasser bissfest kochen.",
+        "Anbraten: Währenddessen die Garnelen mit etwas Knoblauch in einer Pfanne ca. 3–5 Min. anbraten. Die halbierten Tomaten kurz mitschwenken.",
+        "Saucen-Mix: In einer kleinen Schüssel das Pesto Rosso mit dem Topfen glatt rühren. Tipp: 1–2 EL vom heißen Nudelwasser dazugeben, damit es geschmeidig wird.",
+        "Mischen: Nudeln abgießen und direkt in die Pfanne zu den Garnelen geben.",
+        "Finish: Die Pesto-Topfen-Mischung unterrühren, bis alles schön cremig verteilt ist. Mit Rucola oder Basilikum garnieren."
+    ]
+}

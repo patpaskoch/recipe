@@ -50,17 +50,37 @@
         </div>
 
         <div class="flex overflow-x-auto no-scrollbar gap-3 mb-10 pb-2">
-            <button class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95" data-category="Alle">🏠 Alle</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Fisch">🐟 Fisch</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Fleisch">🥩 Fleisch</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Hähnchen">🍗 Hähnchen</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Nudeln">🍝 Nudeln</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Vegetarisch">🥗 Vegetarisch</button>
-            <button class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition" data-category="Käse">🧀 Käse</button>
+            <button
+                class="filter-btn shrink-0 bg-orange-500 text-white px-6 py-2 rounded-full shadow-md font-bold transition active:scale-95"
+                data-category="Alle">🏠 Alle</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition"
+                data-category="Fisch">🐟 Fisch</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition"
+                data-category="Fleisch">🥩 Fleisch</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition"
+                data-category="Hähnchen">🍗 Hähnchen</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition"
+                data-category="Nudeln">🍝 Nudeln</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition"
+                data-category="Vegetarisch">🥗 Vegetarisch</button>
+            <button
+                class="filter-btn shrink-0 bg-white text-gray-700 px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition"
+                data-category="Käse">🧀 Käse</button>
+        </div>
+
+        <div class="flex justify-end px-4 mb-2">
+            <div class="text-[9px] font-black uppercase tracking-[0.3em] text-gray-300 italic">
+                <span id="current-count">0</span> / <span id="total-count">0</span> Rezepte
+            </div>
         </div>
 
         <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            </div>
+        </div>
     </div>
 
     <script>
@@ -72,47 +92,44 @@
         // LÄDT DIE DATEINAMEN AUS DER ZENTRALEN JSON IM ROOT
         async function loadAllRecipes() {
             try {
-                // 1. Hole die Liste der Dateinamen
                 const listRes = await fetch('./rezepte.json');
                 const recipeFiles = await listRes.json();
 
-                // 2. Lade jedes einzelne Rezept-JSON
                 const fetchPromises = recipeFiles.map(file =>
-                    fetch(`./rezepte/${file}`).then(res => {
-                        if (!res.ok) throw new Error(`Fehler bei ${file}`);
-                        return res.json();
-                    })
+                    fetch(`./rezepte/${file}`).then(res => res.json())
                 );
-                
+
                 allRecipes = await Promise.all(fetchPromises);
+
+                // WICHTIG: Hier wird das erste Mal angezeigt
                 displayRecipes(allRecipes);
             } catch (err) {
                 console.error("Ladefehler:", err);
-                recipeGrid.innerHTML = `<p class="col-span-full text-center text-red-500 font-bold">Rezepte konnten nicht geladen werden. Prüfe die rezepte.json!</p>`;
             }
         }
 
+        // UPDATE: Diese Funktion erledigt jetzt alles automatisch
         function displayRecipes(recipes) {
+            // Counter aktualisieren (Subtil rechts bündig)
+            document.getElementById('current-count').innerText = recipes.length;
+            document.getElementById('total-count').innerText = allRecipes.length;
+
             if (recipes.length === 0) {
                 recipeGrid.innerHTML = `<p class="col-span-full text-center py-10 text-gray-400 font-medium text-lg italic">Nichts gefunden... 🍕</p>`;
                 return;
             }
 
+            // Dein bestehender Mapping-Code für das Grid
             recipeGrid.innerHTML = recipes.map(recipe => `
                 <a href="rezept.html?id=${recipe.id}" class="recipe-card relative block rounded-[2.2rem] shadow-lg overflow-hidden group h-60 bg-gray-200 border border-white">
                     <img src="${recipe.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-
                     <div class="absolute inset-0 p-5 flex flex-col justify-between text-white">
                         <div class="flex flex-wrap gap-2">
                             ${(recipe.category || []).map(cat => `
-                                <span class="bg-white/20 backdrop-blur-lg text-[9px] uppercase font-black px-2.5 py-1 rounded-lg border border-white/20 tracking-wider">
-                                    ${cat}
-                                </span>
+                                <span class="bg-white/20 backdrop-blur-lg text-[9px] uppercase font-black px-2.5 py-1 rounded-lg border border-white/20 tracking-wider">${cat}</span>
                             `).join('')}
                         </div>
-
                         <div>
                             <h2 class="text-xl font-black leading-tight mb-3 text-shadow italic">${recipe.title}</h2>
                             <div class="flex gap-2">
@@ -155,8 +172,8 @@
         // Such-Logik
         searchInput.addEventListener('input', () => {
             const query = searchInput.value.toLowerCase();
-            const filtered = allRecipes.filter(r => 
-                r.title.toLowerCase().includes(query) || 
+            const filtered = allRecipes.filter(r =>
+                r.title.toLowerCase().includes(query) ||
                 r.category?.some(c => c.toLowerCase().includes(query))
             );
             displayRecipes(filtered);
@@ -177,11 +194,39 @@
                 if ('wakeLock' in navigator) {
                     wakeLock = await navigator.wakeLock.request('screen');
                 }
-            } catch (err) {}
+            } catch (err) { }
         }
         requestWakeLock();
 
+
+
         loadAllRecipes();
+
+
+        function updateRecipeCount(filteredCount, totalCount) {
+            document.getElementById('current-count').innerText = filteredCount;
+            document.getElementById('total-count').innerText = totalCount;
+        }
+
+        // Beispiel-Logik für deine Filter-Funktion:
+        function filterRecipes() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const activeCategory = document.querySelector('.category-btn.active').dataset.category;
+
+            // Deine Filter-Logik
+            const filteredRecipes = allRecipes.filter(recipe => {
+                const matchesSearch = recipe.title.toLowerCase().includes(searchTerm);
+                const matchesCategory = activeCategory === 'all' || recipe.category === activeCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            // WICHTIG: Hier die Anzeige aktualisieren
+            updateRecipeCount(filteredRecipes.length, allRecipes.length);
+
+            // Danach wie gewohnt die Karten rendern...
+            renderRecipes(filteredRecipes);
+        }
     </script>
 </body>
+
 </html>

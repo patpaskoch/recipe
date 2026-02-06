@@ -1,36 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezept Ansicht</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details[open] summary span.arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Sanfter Übergang für das Durchstreichen */
-        .done-text {
-            opacity: 0.3;
-            text-decoration: line-through;
-            transition: all 0.3s ease;
-        }
+        .text-shadow { text-shadow: 0 2px 15px rgba(0, 0, 0, 1); }
+        .glass-badge { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        summary::-webkit-details-marker { display: none; }
     </style>
 </head>
+<body class="bg-gray-50 font-sans text-gray-900 pb-10">
 
-<body class="bg-white md:bg-gray-100 font-sans text-gray-900 pb-20">
-
-    <div
-        class="max-w-5xl mx-auto bg-white min-h-screen md:min-h-0 md:my-10 md:shadow-2xl md:rounded-[3rem] overflow-hidden">
-        <div id="recipe-content">
-            <div class="p-20 text-center animate-pulse text-gray-400 font-bold italic">Wird zubereitet... 👨‍🍳</div>
-        </div>
+    <div class="max-w-4xl mx-auto bg-white min-h-screen md:shadow-xl md:my-5 md:rounded-[2.5rem] overflow-hidden">
+        <div id="recipe-content"></div>
     </div>
 
     <script>
@@ -42,93 +26,84 @@
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById('recipe-content').innerHTML = `
-                    <div class="relative">
-                        <img src="${data.image}" class="w-full h-[450px] object-cover">
-                        <a href="index.html" class="absolute top-6 left-6 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl hover:scale-110 transition active:scale-95">
-                            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
+                    <div class="relative h-[350px] md:h-[500px]">
+                        <img src="${data.image}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+                        
+                        <a href="index.html" class="absolute top-6 left-6 bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded-2xl shadow-xl hover:bg-white/40 hover:scale-105 transition-all duration-300 active:scale-95 z-20">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15 19l-7-7 7-7"></path>
                             </svg>
                         </a>
+
+                        <div class="absolute bottom-6 left-6 right-6 z-10">
+                            <div class="flex flex-wrap gap-2 md:gap-3 mb-2">
+                                <span class="glass-badge bg-orange-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">⏱ ${data.time}</span>
+                                <span class="glass-badge bg-blue-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">👥 ${data.servings}</span>
+                                <span class="glass-badge bg-green-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">🔥 ${data.calories}</span>
+                                <span class="glass-badge bg-purple-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">💪 ${data.protein}</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-8 md:p-12">
-                        <h1 class="text-5xl font-black mb-6 tracking-tight italic">${data.title}</h1>
-                        
-                        <div class="flex flex-wrap gap-4 mb-10">
-                            <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-2xl text-sm font-black uppercase italic">⏱ ${data.time}</span>
-                            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-2xl text-sm font-black uppercase italic">👥 ${data.servings}</span>
-                            <span class="bg-green-50 text-green-700 px-4 py-2 rounded-2xl text-sm font-black uppercase italic">🔥 ${data.calories}</span>
-                            <span class="bg-purple-50 text-purple-700 px-4 py-2 rounded-2xl text-sm font-black uppercase italic">💪 ${data.protein}</span>
-                        </div>
+                    <div class="p-6 md:p-10">
+                        <h1 class="text-3xl md:text-5xl font-black italic tracking-tighter uppercase leading-tight text-gray-900 mb-8">
+                            ${data.title}
+                        </h1>
                         
                         ${data.info ? `
-                            <div class="bg-orange-50 p-6 rounded-[2.5rem] mb-12 border-l-[12px] border-orange-400 shadow-sm">
-                                <h3 class="text-orange-800 font-black uppercase text-xs tracking-widest mb-2 flex items-center gap-2">💡 Profi-Hack</h3>
-                                <p class="text-orange-950 text-lg leading-relaxed italic font-medium">"${data.info}"</p>
+                            <div class="bg-orange-50 border border-orange-100 p-5 rounded-[2rem] mb-10 shadow-sm">
+                                <h3 class="text-orange-800 font-black uppercase text-[10px] tracking-widest mb-1 flex items-center gap-1">💡 Info</h3>
+                                <p class="text-orange-950 text-base md:text-lg italic font-medium leading-relaxed">${data.info}</p>
                             </div>
                         ` : ''}
 
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                             <div class="lg:col-span-1">
-                                <details open class="group/collapsible bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
-                                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center bg-gray-50/50 group-open/collapsible:bg-white transition-colors">
-                                        <h3 class="text-2xl font-black italic flex items-center gap-2">🛒 Zutaten</h3>
-                                        <span class="transition-transform duration-300 group-open/collapsible:rotate-180 text-orange-500 text-2xl font-black">↓</span>
+                                <details open class="group bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
+                                    <summary class="list-none p-5 cursor-pointer flex justify-between items-center bg-gray-50/50">
+                                        <h3 class="text-xl font-black italic">🛒 Zutaten</h3>
+                                        <span class="transition-transform duration-300 group-open:rotate-180 text-orange-500 text-xl font-black">↓</span>
                                     </summary>
-                                    <div class="p-6 pt-2">
-                                        <ul class="space-y-1">
-                                            ${data.ingredients.map((ing, i) => `
-                                                <li class="border-b border-gray-50 last:border-0">
-                                                    <label class="flex items-start gap-3 py-3 group cursor-pointer">
-                                                        <input type="checkbox" class="mt-1 w-5 h-5 accent-orange-500 rounded border-gray-300 shrink-0">
-                                                        <span class="text-gray-700 font-medium text-lg leading-tight transition-all group-has-[:checked]:opacity-30 group-has-[:checked]:line-through">
-                                                            ${ing}
-                                                        </span>
-                                                    </label>
-                                                </li>
-                                            `).join('')}
-                                        </ul>
+                                    <div class="p-4 space-y-2">
+                                        ${data.ingredients.map(ing => `
+                                            <label class="flex items-center gap-3 p-3.5 bg-gray-50 rounded-2xl border border-gray-100 cursor-pointer group/item">
+                                                <input type="checkbox" class="w-6 h-6 accent-orange-500 rounded-md shrink-0">
+                                                <span class="text-gray-700 font-medium text-base group-has-[:checked]/item:opacity-30 group-has-[:checked]/item:line-through transition-all">${ing}</span>
+                                            </label>
+                                        `).join('')}
                                     </div>
                                 </details>
                             </div>
 
                             <div class="lg:col-span-2">
-                                <h3 class="text-3xl font-black mb-8 italic flex items-center gap-3">👨‍🍳 Zubereitung</h3>
-                                <div class="space-y-12">
+                                <h3 class="text-2xl font-black italic mb-6">👨‍🍳 Zubereitung</h3>
+                                <div class="space-y-10">
                                     ${data.steps.map((step, i) => `
-                                        <label class="group block border-b border-gray-100 pb-10 last:border-0 cursor-pointer">
-                                            <div class="flex items-center gap-4 mb-4">
-                                                <input type="checkbox" class="w-8 h-8 accent-orange-500 rounded-lg border-2 border-gray-300 transition-all group-active:scale-90 shrink-0">
-                                                <span class="text-orange-500 font-black text-2xl italic tracking-tight">Schritt ${i + 1}</span>
+                                        <label class="group block cursor-pointer border-b border-gray-100 pb-8 last:border-0">
+                                            <div class="flex items-center gap-3 mb-3">
+                                                <input type="checkbox" class="w-7 h-7 accent-orange-500 rounded-lg border-2 border-gray-300 shrink-0">
+                                                <span class="text-orange-500 font-black text-2xl italic uppercase tracking-tighter">Schritt ${i + 1}</span>
                                             </div>
-                                            <p class="text-gray-700 leading-relaxed text-xl font-medium transition-all group-has-[:checked]:opacity-20 group-has-[:checked]:line-through">
+                                            <p class="text-gray-700 font-medium leading-relaxed text-lg md:text-xl group-has-[:checked]:opacity-20 group-has-[:checked]:line-through transition-all">
                                                 ${step}
                                             </p>
                                         </label>
                                     `).join('')}
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="mt-16 pt-8 border-t-4 border-gray-50 text-center">
-                            <a href="index.html" class="inline-flex items-center gap-3 bg-gray-900 text-white px-10 py-5 rounded-[2.5rem] font-black text-lg shadow-xl hover:bg-orange-500 hover:scale-105 transition active:scale-95 italic">
-                                🔙 Zurück zur Übersicht
+                        <div class="mt-16 flex justify-center">
+                            <a href="index.html" class="glass-badge bg-gray-900/10 border border-gray-200 text-gray-500 px-8 py-4 rounded-2xl font-bold italic hover:bg-gray-900/20 hover:scale-105 transition-all duration-300 active:scale-95 uppercase tracking-widest text-sm">
+                                🔙 Zurück zur Auswahl
                             </a>
                         </div>
                     </div>
                 `;
                     document.title = data.title;
-                })
-                .catch(err => {
-                    document.getElementById('recipe-content').innerHTML = `
-                    <div class="p-20 text-center">
-                        <div class="text-red-500 font-bold mb-4 text-2xl">Rezept nicht gefunden! 🍕</div>
-                        <a href="index.html" class="text-orange-500 underline font-black">Zurück zur Startseite</a>
-                    </div>`;
                 });
         }
     </script>
 </body>
-
 </html>
