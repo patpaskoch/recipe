@@ -1,0 +1,26 @@
+{
+  "id": "chicken-potatoes",
+  "title": "Airfryer Chicken & Crispy Potatoes",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/785b521819b88ab655101ff754b11155.png",
+  "time": "25 Min.",
+  "servings": "2 Personen",
+  "calories": "585 kcal",
+  "protein": "42g",
+  "category": ["Hähnchen", "Airfryer"],
+  "info": "Für 2 Personen wird der Korb der Heißluftfritteuse recht voll. Schüttle nach 10 Minuten wirklich ordentlich durch, damit die heiße Luft überall hinkommt!",
+  "ingredients": [
+    "400g TK Chicken Fingers",
+    "500g Kartoffeln",
+    "2 EL Olivenöl",
+    "2 TL Paprikapulver",
+    "Salz & Pfeffer nach Geschmack"
+  ],
+  "steps": [
+    "Kartoffeln schälen und in ca. 1,5 cm kleine Würfel schneiden.",
+    "Die Würfel in einer Schüssel mit 2 EL Öl, Paprika, Salz und Pfeffer marinieren.",
+    "Kartoffelwürfel und Chicken Fingers zusammen in den Airfryer-Korb geben.",
+    "Bei 200°C für ca. 20 Minuten goldbraun garen.",
+    "Wichtig: Nach der Hälfte der Zeit (10 Min.) den Korb kräftig schütteln.",
+    "Auf zwei Schüsseln verteilen und genießen."
+  ]
+}
