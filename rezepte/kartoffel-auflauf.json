@@ -1,0 +1,30 @@
+{
+  "id": "kartoffel-auflauf ",
+  "title": "Kartoffel-Auflauf",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/dd47d8226c54ea2dede495b79f0a11ee.jpg",
+  "time": "15 / 40 Min.",
+  "servings": "2 Personen",
+  "calories": "610 kcal",
+  "protein": "27g",
+  "category": ["Vegetarisch", "Käse"],
+  "info": "Mit vorgekochten Kartoffeln nur 15 Min.. Mit rohen Kartoffeln ca. 40 Min. Garzeit im Ofen. Ideal zur Resteverwertung von Gemüse und Zwiebeln.",
+  "ingredients": [
+    "4 mittlere Kartoffeln (vorgekocht oder roh)",
+    "200ml Wasser",
+    "200ml Creme Fine",
+    "2 Handvoll TK-Gemüse",
+    "150g Feta",
+    "2-3 Scheiblettenkäse",
+    "1 Zwiebel",
+    "1 Suppenwürfel",
+    "Pfeffer, Muskat, Oregano"
+  ],
+  "steps": [
+    "Kartoffeln in Scheiben schneiden, Zwiebel würfeln.",
+    "Zwiebeln und Gemüse in der Pfanne ca. 4 Min. anbraten.",
+    "Mit Wasser und Creme Fine ablöschen, Suppenwürfel darin auflösen und kurz einköcheln.",
+    "Kartoffeln unterheben (rohe Kartoffeln vorher ca. 10 Min. in der Soße vorköcheln) und würzen.",
+    "In die Auflaufform füllen, Feta und zerrissene Scheibletten darüber verteilen.",
+    "Backen bei 200°C: 10 Min. (vorgekocht) oder ca. 30 Min. (roh), bis die Kartoffeln weich sind."
+  ]
+}
