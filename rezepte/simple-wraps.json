@@ -1,0 +1,27 @@
+{
+  "id": "simple-wraps",
+  "title": "Wraps",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/ee6ad2b07f2a585749ad46dfb265f03d.jpg",
+  "time": "15 Min.",
+  "servings": "2 Personen",
+  "calories": "540 kcal",
+  "protein": "38g",
+  "category": ["Fleisch", "Hähnchen"],
+  "info": "Kann wahlweise mit 250g Hähnchenbrust oder 250g Hackfleisch zubereitet werden.",
+  "ingredients": [
+    "4 Tortilla-Wraps",
+    "300g Hähnchenbrust oder Hackfleisch",
+    "1 Eisbergsalat",
+    "2 Tomaten",
+    "1 Zwiebel",
+    "150g Joghurt oder Hüttenkäse",
+    "Salz, Pfeffer, Paprikapulver",
+    "Tex-Mex-Gewürz (optional)"
+  ],
+  "steps": [
+    "Fleisch in der Pfanne anbraten und mit Text-Mex-Gewürz, Salz, Pfeffer und Paprika würzen.",
+    "Salat, Tomaten und Zwiebeln klein schneiden.",
+    "Wraps kurz erwärmen und mit Joghurt/Hüttenkäse bestreichen.",
+    "Fleisch und Gemüse auf den Wraps verteilen, einrollen und servieren."
+  ]
+}

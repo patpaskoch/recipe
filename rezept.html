@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezept Ansicht</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .text-shadow { text-shadow: 0 2px 15px rgba(0, 0, 0, 1); }
-        .glass-badge { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-        summary::-webkit-details-marker { display: none; }
+        .text-shadow {
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 1);
+        }
+
+        .glass-badge {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 font-sans text-gray-900 pb-10">
+
+
+    <video id="wakeLockVideo" muted autoplay loop playsinline style="display:none;">
+        <source src="assets/media/silent-wake.mp4" type="video/mp4">
+    </video>
 
     <div class="max-w-4xl mx-auto bg-white min-h-screen md:shadow-xl md:my-5 md:rounded-[2.5rem] overflow-hidden">
         <div id="recipe-content"></div>
@@ -21,6 +37,15 @@
         const urlParams = new URLSearchParams(window.location.search);
         const recipeId = urlParams.get('id');
 
+        document.addEventListener('click', function () {
+            const v = document.getElementById('keepScreenAwake');
+            v.play().then(() => {
+                console.log("Wake-Lock aktiv: Bildschirm bleibt an.");
+            }).catch(err => {
+                console.log("Video-Start verzögert oder blockiert:", err);
+            });
+        }, { once: true });
+        
         if (recipeId) {
             fetch(`./rezepte/${recipeId}.json`)
                 .then(res => res.json())
@@ -106,4 +131,5 @@
         }
     </script>
 </body>
+
 </html>
