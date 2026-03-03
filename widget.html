@@ -1,0 +1,35 @@
+<div id="widget-container">
+    <datacycle-widget app-id="widget" widget-identifier="vcloud-montafon/map" version="3" widget-type="map"
+        api-endpoint="56340b90-d806-44d1-a280-91e2edbf99fd" language="de" locale="de" show-widget-footer="true"
+        footer-variants="default" detail-view="true" focus-mode="false" crop-image="true" use-main-heading="false"
+        maximum-heading-level="2" show-tags="none" filter-design="side-panel-deep" sort-concepts-alphabetically="false"
+        click-info-design="side-panel" display-item-url-as-qr-code="false" show-near-by-items="false"
+        map-show-nested-geo-objects="true" map-show-nested-geo-objects-at="detail-map" map-enable-clustering="true"
+        map-enable-perimeter-filter="false" map-enable-concept-filter="true"
+        map-concepts-show-count-with-subtree="false" map-enable-fulltext-search="true" map-icon-size="20"
+        map-tour-render-type="line" map-enable-is-open-icon-indicator="false" map-enable-highlight-region="false"
+        map-base-map-style-option="toursprung-terrain" detail-map-nested-content-navigation="false"></datacycle-widget>
+    <script type="module" src="https://v-cloud-widgets.montafon.at/v3/map/assets/widget.js" defer></script>
+</div>
+<style>
+    .datacycle-widget {
+        /* Farben: Tiefblau & Sanftes Grau */
+        --dc-color-primary: #2563eb !important; /* Royal Blue */
+        --dc-color-secondary: #0f172a !important; /* Dark Slate */
+        --dc-button-primary-bg: #2563eb !important;
+        --dc-button-primary-bg-hover: #1d4ed8 !important;
+        --dc-icon-color: #2563eb !important;
+        
+        /* UI Elemente */
+        --dc-widget-header-bg: #f8fafc;
+        --dc-collection-card-bg: #ffffff;
+        --dc-button-border-radius: 8px; /* Modernere, rundere Ecken */
+        
+        /* Karte */
+        --dc-map-primary-color: #0f172a;
+        --dc-map-button-color: #2563eb;
+        
+        /* Schrift */
+        --dc-font-family: 'Inter', system-ui, sans-serif;
+    }
+</style>

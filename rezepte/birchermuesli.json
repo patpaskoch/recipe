@@ -1,0 +1,31 @@
+{
+  "id": "birchermuesli",
+  "title": "Klassisches Birchermüsli mit Banane",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/ed84c2148c7d4f6cfea04be92677ac5c.jpg",
+  "time": "5 Min.",
+  "servings": "2 Personen",
+  "calories": "445 kcal",
+  "protein": "27g",
+  "category": ["Vegetarisch", "Protein", "Abendessen"],
+  "info": "💡 **Natur-Süße:** Die zerdrückte Banane ersetzt den Zucker komplett und sorgt zusammen mit Skyr für eine extrem cremige Konsistenz. 27g Protein pro Schüssel!",
+  "ingredients": [
+    "100g Haferflocken (zart)",
+    "200ml Milch oder ungesüßte Mandelmilch",
+    "250g Skyr",
+    "150g Naturjoghurt (1,5% Fett)",
+    "2 Äpfel (gerieben)",
+    "1 reife Banane",
+    "2 Handvoll Beeren",
+    "Eine Prise Zimt",
+    "30g Walnüsse oder Mandelsplitter",
+    "Ein Spritzer Zitronensaft"
+  ],
+  "steps": [
+    "Die Haferflocken in einer Schüssel mit der Milch kurz quellen lassen.",
+    "Die Banane mit einer Gabel zu einem feinen Brei zerdrücken und unter die Haferflocken rühren.",
+    "Skyr und Joghurt dazugeben und alles glatt rühren.",
+    "Die Äpfel fein reiben, mit Zitronensaft mischen und unterheben.",
+    "Mit Zimt abschmecken und die Beeren als Topping oben drauf geben.",
+    "Die Nüsse (Walnüsse kurz zerbröseln) und Beeren als Topping oben drauf geben und mit Zimt bestreuen."
+  ]
+}
