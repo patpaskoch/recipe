@@ -1,0 +1,31 @@
+{
+  "id": "gnocchi-salat-bacon",
+  "title": "Gnocchi-Salat mit krossem Bacon",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/8ade4c0d03e742d1c1c63e7008512c45.jpg",
+  "time": "20 Min.",
+  "servings": "2 Personen",
+  "calories": "645 kcal",
+  "protein": "18g",
+  "category": ["Gnocchi", "Salat", "Airfryer"],
+  "info": "Die Gnocchi mit Hartkäse vermengen und bei 200 Grad ca. 8 Min. backen, bis sie goldbraun sind. Das Dressing mit Senf und Worcestersoße gibt den Kick!",
+  "ingredients": [
+    "1 Packung Gnocchi (500g)",
+    "100g Bacon (Frühstücksspeck)",
+    "1 Romanasalat",
+    "125g Cherrytomaten",
+    "40g Hartkäse (gerieben)",
+    "1 Zitrone",
+    "1 EL Mayonnaise",
+    "150g Joghurt",
+    "1 TL Senf",
+    "1 TL Worcestersoße",
+    "Salz & Pfeffer"
+  ],
+  "steps": [
+    "Gnocchi mit der Hälfte des Hartkäses mischen und im Airfryer bei 200°C ca. 8 Min. knusprig backen.",
+    "Bacon in einer Pfanne ohne Fett kross anbraten und auf Küchenpapier abtropfen lassen.",
+    "Tomaten halbieren, Salat klein schneiden.",
+    "Dressing: Joghurt, Mayo, restlicher Hartkäse, Senf, Worcestersoße und Zitronensaft verrühren.",
+    "Salat und Tomaten mit dem Dressing mischen, Gnocchi und Bacon oben drauf verteilen."
+  ]
+}
