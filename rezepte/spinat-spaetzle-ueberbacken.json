@@ -1,0 +1,29 @@
+{
+  "id": "spinat-spaetzle-ueberbacken",
+  "title": "Überbackene Spinat-Spätzle",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/23bff969a97c22372eb6c00ed0dc86fb.jpg",
+  "time": "45 Min.",
+  "servings": "2 Personen",
+  "calories": "580 kcal",
+  "protein": "29g",
+  "isNew": true,
+  "isFavorite": true,
+  "category": ["Vegetarisch", "Nudeln", "Käse"],
+  "info": "Wenn du TK-Spinat nimmst, drück ihn extrem gut aus! Zu viel Wasser macht den Teig klebrig. Frischer Blattspinat kurz blanchiert gibt die intensivste Farbe.",
+  "ingredients": [
+    "150g Blattspinat (frisch oder TK)",
+    "250g Mehl (Typ 405 oder Spätzlemehl)",
+    "3 Eier",
+    "50ml Milch (nur bei Bedarf)",
+    "100g Bergkäse oder Emmentaler",
+    "1 Zwiebel",
+    "Salz, Pfeffer, Muskatnuss"
+  ],
+  "steps": [
+    "Den Spinat fein pürieren (frischen Spinat vorher kurz in kochendem Wasser zusammenfallen lassen).",
+    "Mehl, Eier, eine Prise Salz und das Spinatpüree zu einem zähen Teig schlagen, bis er Blasen wirft.",
+    "Den Teig durch ein Spätzlesieb in kochendes Salzwasser geben. Wenn sie oben schwimmen, kurz abschrecken.",
+    "Zwiebeln anbraten, Spätzle dazugeben und mit dem Käse in eine Auflaufform schichten.",
+    "Im Ofen bei 200°C ca. 10 Min. überbacken, bis der Käse schmilzt."
+  ]
+}
