@@ -1,0 +1,23 @@
+{
+  "id": "huehnerbrust-gemuese-airfryer",
+  "title": "Hähnchen & Gemüse aus der Heißluft",
+  "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?q=80&w=2070&auto=format&fit=crop",
+  "time": "25 Min.",
+  "servings": "2 Personen",
+  "calories": "338 kcal",
+  "protein": "32g",
+  "category": ["Hähnchen", "Airfryer", "Leicht"],
+  "ingredients": [
+    "2 Hühnerbrustfilets",
+    "2 Karotten",
+    "200g Kürbis oder Saisongemüse",
+    "100g Kohlsprossen (Rosenkohl)",
+    "Marinade: Honig, Senf, Öl, Paprika, Thymian"
+  ],
+  "steps": [
+    "Fleisch mit der Marinade einreiben.",
+    "Gemüse klein schneiden, mit Öl, Rosmarin, Salz und Pfeffer mischen.",
+    "Gemüse (außer Kohlsprossen) bei 180°C für 5 Min. in den Airfryer.",
+    "Fleisch und Kohlsprossen dazugeben und ca. 10-12 Min. fertig garen."
+  ]
+}

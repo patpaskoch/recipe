@@ -8,24 +8,20 @@
     "protein": "28g",
     "category": [
         "Nudeln",
-        "Fleisch",
         "Käse"
     ],
     "ingredients": [
         "200g Hörnchen",
-        "70g Speck",
         "20g Butter",
         "2 EL Mehl",
         "200ml Milch",
-        "70ml Sahne",
         "80g Cheddar & Appenzeller",
         "Gewürze: Paprika, Knoblauch, Muskat"
     ],
     "steps": [
-        "Speck kross braten.",
-        "Butter schmelzen, Mehl einrühren und mit Milch/Sahne aufgießen.",
+        "Butter schmelzen, Mehl einrühren und mit Milch aufgießen.",
         "Käse in der Sauce schmelzen und kräftig würzen.",
-        "Gekochte Nudeln mit der Sauce und Speck mischen.",
+        "Gekochte Nudeln mit der Sauce mischen.",
         "In eine Form geben, mit restlichem Käse bestreuen und kurz überbacken/grillen."
     ]
 }

@@ -1,0 +1,31 @@
+{
+  "id": "nudelsalat",
+  "title": "Nudelsalat",
+  "isNew": true,
+  "isFavorite": true,
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/0eceec123f75ddfe9aa1db2fe0768758.jpg",
+  "time": "20 Min.",
+  "servings": "2 Personen",
+  "calories": "435 kcal",
+  "protein": "24g",
+  "category": ["Nudeln", "Fleisch", "Salat"],
+  "info": "Die klassische Erbsen-Karotten-Mischung aus der Dose ist super praktisch. Wenn du frische Karotten nimmst, schneide sie sehr klein und koche sie die letzten 3-4 Minuten einfach direkt bei den Nudeln mit!",
+  "ingredients": [
+    "200g kurze Nudeln (z.B. Hörnchen oder Fusilli)",
+    "100g Extrawurst oder Schinkenwurst (gewürfelt)",
+    "1 kleine Dose Erbsen & Karotten (ca. 150g Abtropfgewicht)",
+    "2 EL Mayo (fettreduziert)",
+    "3 EL Griechischer Joghurt (0% oder 2%)",
+    "1 TL Senf",
+    "1 EL Gurkenwasser (für die Würze)",
+    "Salz, Pfeffer, eine Prise Paprika"
+  ],
+  "steps": [
+    "Nudeln in Salzwasser kochen. Falls du frisches Gemüse nutzt, dieses kurz mitgaren.",
+    "Erbsen und Karotten abgießen und gut abtropfen lassen.",
+    "Dressing: Mayo, Joghurt, Senf, Gurkenwasser und Gewürze glatt rühren.",
+    "Nudeln, Wurst und das Gemüse unter das Dressing heben.",
+    "Den Salat mindestens 30 Minuten im Kühlschrank ziehen lassen, damit die Nudeln das Aroma aufnehmen.",
+    "Nochmal abschmecken (Nudeln schlucken viel Salz!) und servieren."
+  ]
+}
