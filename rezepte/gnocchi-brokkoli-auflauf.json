@@ -1,0 +1,29 @@
+{
+  "id": "gnocchi-brokkoli-auflauf",
+  "added": "2026-08-27",
+  "title": "Gnocchi-Brokkoli-Auflauf",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/b95c39f6cb5b57d120d770d8b91527e7.jpg",
+  "time": "15 / 35 Min.",
+  "servings": "2 Personen",
+  "calories": "600 kcal",
+  "protein": "24g",
+  "category": ["Gnocchi", "Käse"],
+  "info": "Brokkoli und Gnocchi nur 3 Min. vorkochen – sie garen im Ofen fertig. Mit Kochsahne (15%) statt Schlagsahne wird der Auflauf deutlich leichter.",
+  "ingredients": [
+    "300g Gnocchi (Kühlregal)",
+    "1 kleiner Brokkoli (oder 1/2 großer)",
+    "50g gekochter Schinken",
+    "125ml Kochsahne (15%) oder Creme Fine",
+    "75g Kräuterfrischkäse",
+    "1 TL Senf",
+    "75g geriebener Käse (z.B. Gouda)",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "steps": [
+    "Backofen auf 180°C Ober-/Unterhitze vorheizen. Brokkoli in Röschen teilen, Schinken würfeln.",
+    "Brokkoli und Gnocchi in Salzwasser 3 Min. kochen, abgießen und mit dem Schinken in eine Auflaufform geben.",
+    "Kochsahne, Frischkäse und Senf verrühren, mit Salz, Pfeffer und Muskat kräftig würzen.",
+    "Die Soße über die Gnocchi geben und alles vermengen.",
+    "Mit geriebenem Käse bestreuen und ca. 20 Min. goldbraun backen."
+  ]
+}

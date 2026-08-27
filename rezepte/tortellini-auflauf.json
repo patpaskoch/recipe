@@ -1,0 +1,31 @@
+{
+  "id": "tortellini-auflauf",
+  "added": "2026-08-27",
+  "title": "Tortelliniauflauf",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/a4c8bdf205dd94507bd35c350bf5dae9.jpg",
+  "time": "15 / 35 Min.",
+  "servings": "2 Personen",
+  "calories": "720 kcal",
+  "protein": "38g",
+  "category": ["Nudeln", "Vegetarisch", "Käse"],
+  "info": "Die Tortellini kommen roh in die Form – sie garen in der Soße mit. Die Soße darf ruhig etwas flüssiger wirken, beim Backen saugen die Nudeln sie auf.",
+  "ingredients": [
+    "400g frische Tortellini (Kühlregal)",
+    "1 Dose stückige Tomaten (400g)",
+    "1 EL Tomatenmark",
+    "75ml Sahne (oder Creme Fine)",
+    "125g Mozzarella",
+    "150g Cherrytomaten",
+    "1 kleine Zwiebel & 1 Knoblauchzehe",
+    "2 Handvoll TK-Erbsen & Mais",
+    "1 EL frische Kräuter (Basilikum oder Petersilie)",
+    "Salz, Pfeffer, Oregano"
+  ],
+  "steps": [
+    "Backofen auf 180°C Ober-/Unterhitze vorheizen. Zwiebel und Knoblauch würfeln, Cherrytomaten halbieren, Mozzarella in Scheiben schneiden.",
+    "Zwiebel und Knoblauch in etwas Öl andünsten, Tomatenmark kurz mitrösten.",
+    "Mit Sahne und den stückigen Tomaten ablöschen, Kräuter zugeben und mit Salz, Pfeffer und Oregano kräftig abschmecken.",
+    "Tortellini mit der Soße, den Erbsen und dem Mais in einer Auflaufform vermengen.",
+    "Cherrytomaten und Mozzarella darauf verteilen und ca. 20 Min. backen, bis der Käse goldbraun ist."
+  ]
+}

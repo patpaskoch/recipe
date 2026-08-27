@@ -1,0 +1,31 @@
+{
+  "id": "bandnudeln-lachs",
+  "added": "2026-08-27",
+  "title": "Bandnudeln mit Lachs",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/5d3947e6b661496cc2d196930884314f.jpg",
+  "time": "15 / 20 Min.",
+  "servings": "2 Personen",
+  "calories": "640 kcal",
+  "protein": "40g",
+  "category": ["Nudeln", "Fisch"],
+  "info": "Die Soße nach Zugabe des Lachses nur noch sanft ziehen lassen, nicht mehr sprudelnd kochen – sonst wird der Fisch trocken. Mit Kochsahne (15%) statt Schlagsahne sparst du ordentlich Kalorien.",
+  "ingredients": [
+    "200g Bandnudeln (gerne Vollkorn)",
+    "250g frisches Lachsfilet (ohne Haut)",
+    "100g Cherrytomaten",
+    "1/2 Zwiebel",
+    "1 Knoblauchzehe",
+    "1 EL Olivenöl",
+    "1 EL Tomatenmark",
+    "125g Kochsahne oder Creme Fine (15%)",
+    "80ml Gemüsebrühe",
+    "Salz & Pfeffer"
+  ],
+  "steps": [
+    "Zwiebel und Knoblauch würfeln. Lachs in Würfel schneiden, Tomaten halbieren. Bandnudeln nach Packung kochen.",
+    "Olivenöl in einer Pfanne erhitzen. Zwiebel und Knoblauch glasig dünsten, Tomatenmark zugeben und kurz mitrösten.",
+    "Mit Sahne und Brühe ablöschen, aufkochen und mit Salz und Pfeffer würzen.",
+    "Lachswürfel in die Soße geben, zugedeckt bei niedriger Hitze ca. 8-10 Min. sanft gar ziehen lassen (nicht mehr kochen).",
+    "Cherrytomaten unterheben, kurz erwärmen und die Soße über die Bandnudeln geben."
+  ]
+}

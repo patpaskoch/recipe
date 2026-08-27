@@ -1,0 +1,29 @@
+{
+  "id": "kartoffelsuppe-wuerstchen",
+  "added": "2026-08-27",
+  "title": "Kartoffelsuppe mit Würstchen",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/fffaae6751d3072393d6255406cbaa80.jpg",
+  "time": "15 / 35 Min.",
+  "servings": "2 Personen",
+  "calories": "470 kcal",
+  "protein": "18g",
+  "category": ["Suppe", "Fleisch"],
+  "info": "Für eine cremigere Suppe einfach die Hälfte der Kartoffeln am Ende mit dem Pürierstab zerdrücken und den Rest stückig lassen. Majoran ist hier das Schlüsselgewürz – nicht weglassen!",
+  "ingredients": [
+    "500g festkochende Kartoffeln",
+    "1/2 Bund Suppengemüse (oder 2 Karotten + 1/2 Stange Lauch)",
+    "1 EL Butter",
+    "600ml Gemüsebrühe",
+    "4 Wiener Würstchen",
+    "50ml Sahne (oder Creme Fine)",
+    "2 EL frische Petersilie (gehackt)",
+    "Salz, Pfeffer, Majoran, Muskat"
+  ],
+  "steps": [
+    "Kartoffeln schälen und in kleine Würfel schneiden. Suppengemüse fein schneiden.",
+    "Butter in einem Topf schmelzen. Kartoffeln und Gemüse darin ca. 5 Min. unter Rühren andünsten.",
+    "Mit der Gemüsebrühe aufgießen, aufkochen und zugedeckt ca. 20 Min. köcheln lassen, bis die Kartoffeln weich sind.",
+    "Optional die Hälfte pürieren. Würstchen in Scheiben schneiden und in der Suppe kurz heiß werden lassen.",
+    "Sahne und Petersilie unterrühren. Mit Salz, Pfeffer, Majoran und einer Prise Muskat kräftig abschmecken."
+  ]
+}

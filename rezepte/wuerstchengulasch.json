@@ -1,0 +1,33 @@
+{
+  "id": "wuerstchengulasch",
+  "added": "2026-08-27",
+  "title": "Würstchengulasch",
+  "image": "https://vtss.my.canva.site/dahajxc4bnu/_assets/media/08b157af1a194af3b5cbd15c5222cbd5.jpg",
+  "time": "15 / 35 Min.",
+  "servings": "2 Personen",
+  "calories": "500 kcal",
+  "protein": "24g",
+  "category": ["Fleisch"],
+  "info": "Schmeckt zu Baguette, Nudeln oder Kartoffelpüree. Die ganze Dose Tomaten macht mehr Soße als das Original – perfekt zum Tunken.",
+  "ingredients": [
+    "300g Wiener Würstchen (ca. 3-4 Stück)",
+    "1 rote Paprika",
+    "1/2 Zwiebel & 1 Knoblauchzehe",
+    "25g Baconwürfel",
+    "1 EL Olivenöl",
+    "1 EL Tomatenmark",
+    "1 Dose stückige Tomaten (400g)",
+    "150ml Rinderbrühe",
+    "2 EL Creme fraiche",
+    "1 TL Paprikapulver edelsüß",
+    "1 EL frische Petersilie (gehackt)",
+    "Salz & Pfeffer"
+  ],
+  "steps": [
+    "Würstchen in Scheiben schneiden, Zwiebel und Knoblauch würfeln, Paprika in Streifen schneiden.",
+    "Öl im Topf erhitzen, Bacon und Zwiebel 2 Min. anbraten. Würstchen, Knoblauch und Paprika zugeben und 2 Min. mitbraten.",
+    "Tomatenmark einrühren und kurz mitrösten.",
+    "Mit Rinderbrühe und den stückigen Tomaten ablöschen. Mit Paprikapulver, Salz und Pfeffer würzen und ca. 20 Min. bei mittlerer Hitze köcheln lassen.",
+    "Zum Schluss Petersilie und Creme fraiche unterrühren und nochmal abschmecken."
+  ]
+}
