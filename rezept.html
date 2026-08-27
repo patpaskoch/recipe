@@ -33,12 +33,14 @@
         <div id="recipe-content"></div>
     </div>
 
+    <script src="js/einkaufsliste.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const recipeId = urlParams.get('id');
 
         document.addEventListener('click', function () {
-            const v = document.getElementById('keepScreenAwake');
+            const v = document.getElementById('wakeLockVideo');
+            if (!v) return;
             v.play().then(() => {
                 console.log("Wake-Lock aktiv: Bildschirm bleibt an.");
             }).catch(err => {
@@ -61,8 +63,13 @@
                             </svg>
                         </a>
 
+                        <a href="einkaufsliste.html" class="absolute top-6 right-6 flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-4 py-3 rounded-2xl shadow-xl text-white font-black italic hover:bg-white/40 hover:scale-105 transition-all duration-300 active:scale-95 z-20">
+                            🛒
+                            <span class="ek-badge bg-orange-500 text-white text-xs font-black rounded-full min-w-[1.4rem] h-[1.4rem] inline-flex items-center justify-center px-1" style="display:none">0</span>
+                        </a>
+
                         <div class="absolute bottom-6 left-6 right-6 z-10">
-                            <div class="flex flex-wrap gap-2 md:gap-3 mb-2">
+                            <div class="flex flex-wrap gap-2 md:gap-3">
                                 <span class="glass-badge bg-orange-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">⏱ ${data.time}</span>
                                 <span class="glass-badge bg-blue-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">👥 ${data.servings}</span>
                                 <span class="glass-badge bg-green-500/40 border border-white/20 text-white px-3 py-1.5 rounded-xl text-[11px] font-black uppercase italic shadow-lg">🔥 ${data.calories}</span>
@@ -71,11 +78,20 @@
                         </div>
                     </div>
 
-                    <div class="p-6 md:p-10">
-                        <h1 class="text-3xl md:text-5xl font-black italic tracking-tighter uppercase leading-tight text-gray-900 mb-8">
+                    <div id="rezept-start" class="p-6 md:p-10">
+                        <h1 class="text-3xl md:text-5xl font-black italic tracking-tighter uppercase leading-tight text-gray-900 mb-6">
                             ${data.title}
                         </h1>
-                        
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-10">
+                            <button type="button" onclick="scrollToRecipe()" class="flex-1 px-6 py-4 rounded-2xl border border-gray-300 bg-white text-gray-800 font-black italic uppercase tracking-wide text-sm hover:border-gray-900 active:scale-[0.98] transition flex items-center justify-center gap-2">
+                                ↓ Zum Rezept
+                            </button>
+                            <button type="button" id="add-to-list" class="flex-1 px-6 py-4 rounded-2xl border border-gray-300 bg-white text-gray-800 font-black italic uppercase tracking-wide text-sm hover:border-gray-900 active:scale-[0.98] transition flex items-center justify-center gap-2">
+                                🛒 Auf die Einkaufsliste
+                            </button>
+                        </div>
+
                         ${data.info ? `
                             <div class="bg-orange-50 border border-orange-100 p-5 rounded-[2rem] mb-10 shadow-sm">
                                 <h3 class="text-orange-800 font-black uppercase text-[10px] tracking-widest mb-1 flex items-center gap-1">💡 Info</h3>
@@ -83,7 +99,7 @@
                             </div>
                         ` : ''}
 
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div id="rezept-anker" class="grid grid-cols-1 lg:grid-cols-3 gap-8 scroll-mt-6">
                             <div class="lg:col-span-1">
                                 <details open class="group bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
                                     <summary class="list-none p-5 cursor-pointer flex justify-between items-center bg-gray-50/50">
@@ -127,7 +143,28 @@
                     </div>
                 `;
                     document.title = data.title;
+
+                    const addBtn = document.getElementById('add-to-list');
+                    if (addBtn) {
+                        const addLabel = addBtn.textContent.trim();
+                        addBtn.addEventListener('click', () => {
+                            EK.loadZutaten().then(z => {
+                                const n = EK.addRecipe(data, z);
+                                addBtn.textContent = n > 0 ? `✓ ${n} Zutaten hinzugefügt` : '✓ Schon auf der Liste';
+                                addBtn.classList.add('border-gray-900', 'bg-gray-900', 'text-white');
+                                setTimeout(() => {
+                                    addBtn.textContent = addLabel;
+                                    addBtn.classList.remove('border-gray-900', 'bg-gray-900', 'text-white');
+                                }, 2200);
+                            });
+                        });
+                    }
                 });
+        }
+
+        function scrollToRecipe() {
+            const el = document.getElementById('rezept-anker') || document.getElementById('rezept-start');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
 </body>

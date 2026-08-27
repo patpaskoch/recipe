@@ -1,0 +1,75 @@
+{
+  "_hinweis": "Klassifizierung der Zutaten für die Einkaufsliste. 'reihenfolge' = Anzeige-Reihenfolge der Gruppen (Supermarkt-Logik). 'stichworte' wird gegen den Zutaten-Text gematcht (Kleinschreibung, Teilstring). Neue Zutaten einfach beim passenden Stichwort ergänzen. Ein Rezept kann eine Zutat auch als Objekt schreiben: { \"text\": \"...\", \"typ\": \"Fleisch & Fisch\" } – das hat Vorrang.",
+  "reihenfolge": [
+    "Obst & Gemüse",
+    "Fleisch & Fisch",
+    "Kühlregal",
+    "Vorrat",
+    "Tiefkühl",
+    "Gewürze & Sonstiges"
+  ],
+  "emoji": {
+    "Obst & Gemüse": "🥬",
+    "Fleisch & Fisch": "🥩",
+    "Kühlregal": "🧀",
+    "Vorrat": "🥫",
+    "Tiefkühl": "🧊",
+    "Gewürze & Sonstiges": "🧂"
+  },
+  "prioritaet": [
+    "Tiefkühl",
+    "Fleisch & Fisch",
+    "Vorrat",
+    "Kühlregal",
+    "Obst & Gemüse",
+    "Gewürze & Sonstiges"
+  ],
+  "startet_mit": {
+    "gewürze": "Gewürze & Sonstiges",
+    "marinade": "Gewürze & Sonstiges",
+    "wasser": "Gewürze & Sonstiges"
+  },
+  "stichworte": {
+    "Tiefkühl": ["tk-", "tk ", "tiefkühl", "tk-gemüse", "tk-erbsen", "tk-beeren"],
+    "Fleisch & Fisch": [
+      "hähnchenbrust", "hähnchen", "hühnerbrust", "hühnerfilet", "hühner", "hackfleisch", "rinderhack",
+      "faschiertes", "lachsfilet", "lachs", "thunfisch", "garnelen", "shrimps", "schrimps", "scampi",
+      "bacon", "frühstücksspeck", "speckwürfel", "speck", "baconwürfel", "wiener würstchen", "würstchen",
+      "extrawurst", "schinkenwurst", "kochschinken", "krustenschinken", "gekochter schinken", "schinken",
+      "chicken fingers", "chicken"
+    ],
+    "Obst & Gemüse": [
+      "knoblauch", "zwiebel", "lauch", "frühlingszwiebel", "avocado", "banane", "apfel", "äpfel",
+      "zitrone", "limette", "ingwer", "rote paprika", "paprikaschote", "zucchini", "brokkoli", "karotte",
+      "möhre", "cherrytomate", "kirschtomate", "cocktailtomate", "tomaten", "tomate", "kürbis",
+      "saisongemüse", "blattspinat", "spinat", "rucola", "basilikum", "koriander", "petersilie",
+      "schnittlauch", "frische kräuter", "kräuter", "eisbergsalat", "romanasalat", "romana", "salat",
+      "buschbohnen", "grüne bohnen", "kohlsprossen", "rosenkohl", "sauerkraut", "essiggurke", "gurke",
+      "champignon", "pilze", "sellerie", "suppengemüse", "kartoffel", "beeren", "gemüse"
+    ],
+    "Kühlregal": [
+      "naturjoghurt", "joghurt", "skyr", "magerquark", "quark", "topfen", "cottage cheese", "hüttenkäse",
+      "feta", "mozzarella", "bergkäse", "emmentaler", "cheddar", "appenzeller", "gouda", "parmesan",
+      "hartkäse", "streukäse", "scheiblettenkäse", "scheibletten", "reibekäse", "käse", "frischkäse",
+      "kräuterfrischkäse", "sahne", "kochsahne", "creme fine", "crème fine", "creme fraiche",
+      "crème fraîche", "schlagobers", "butter", "schmalz", "milch", "eier", "bio-eier",
+      "mayonnaise", "mayo", "gnocchi", "tortellini", "spätzle", "strudelteig", "blätterteig", "tofu"
+    ],
+    "Vorrat": [
+      "vollkornnudeln", "vollkorn-nudeln", "vollkornpasta", "vollkorn-spaghetti", "spaghetti", "bandnudeln",
+      "hörnchen", "fusilli", "nudeln", "pasta", "reis", "spätzlemehl", "panko", "mehl", "haferflocken",
+      "stückige tomaten", "passierte tomaten", "tomatenmark", "ketchup", "kokosmilch",
+      "kapern", "oliven", "pesto", "olivenöl", "öl", "honig", "ahornsirup", "senf", "worcester",
+      "currypulver", "curry", "brühwürfel", "suppenwürfel", "brühepulver", "brühe", "suppengewürz",
+      "suppengrün", "walnüsse", "cashews", "mandeln", "mandelsplitter", "nüsse", "haselnüsse",
+      "zucker", "puderzucker", "vanilleschote", "vanillezucker", "backpulver", "natron", "kokosraspel",
+      "kokos", "erbsen", "mais", "kidneybohnen", "kichererbsen", "linsen", "tortilla", "wraps",
+      "gurkenwasser", "weißwein"
+    ],
+    "Gewürze & Sonstiges": [
+      "salz", "pfeffer", "muskat", "muskatnuss", "oregano", "majoran", "thymian", "rosmarin", "basilikum getrocknet",
+      "paprikapulver", "paprika edelsüß", "chili", "kreuzkümmel", "kümmel", "zimt", "curry gewürz",
+      "tex-mex", "gewürze", "gewürz", "marinade", "essig", "balsamico", "zitronensaft", "wasser", "nudelwasser"
+    ]
+  }
+}

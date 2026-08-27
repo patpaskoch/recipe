@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkaufsliste 🛒</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+
+<body class="bg-gray-50 p-4 md:p-8 font-sans text-gray-800 pb-24">
+
+    <div class="max-w-3xl mx-auto">
+        <nav class="flex gap-2 mb-8">
+            <a href="index.html" class="px-5 py-2.5 rounded-2xl bg-white border border-gray-200 shadow-sm font-black italic text-gray-600 hover:text-orange-500 transition">🍽️ Rezepte</a>
+            <a href="einkaufsliste.html" class="px-5 py-2.5 rounded-2xl bg-orange-500 text-white shadow-md font-black italic flex items-center gap-2">
+                🛒 Einkaufsliste
+                <span class="ek-badge bg-white text-orange-600 text-xs font-black rounded-full min-w-[1.4rem] h-[1.4rem] inline-flex items-center justify-center px-1" style="display:none">0</span>
+            </a>
+        </nav>
+
+        <header class="mb-6">
+            <h1 class="text-4xl font-black text-gray-900 mb-2 italic tracking-tighter">Einkaufsliste 🛒</h1>
+            <p class="text-gray-500 font-medium ml-1"><span id="summary">Noch nichts drauf.</span></p>
+        </header>
+
+        <form id="add-form" class="relative mb-6">
+            <input type="text" id="add-input" placeholder="Eigenen Artikel hinzufügen …" autocomplete="off"
+                class="w-full bg-white border border-gray-200 rounded-2xl py-4 px-6 pr-28 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all font-medium">
+            <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-5 py-2.5 rounded-xl font-black italic hover:scale-105 active:scale-95 transition">+ Add</button>
+        </form>
+
+        <div id="list" class="space-y-5"></div>
+
+        <div id="empty" class="hidden text-center py-20 text-gray-400 font-medium italic">
+            Deine Liste ist leer.<br>
+            Öffne ein Rezept und tippe auf <span class="font-black text-gray-500">„🛒 Auf die Einkaufsliste"</span>.
+        </div>
+    </div>
+
+    <!-- Aktionsleiste unten -->
+    <div id="actionbar" class="hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t border-gray-200 p-3">
+        <div class="max-w-3xl mx-auto flex flex-wrap gap-2 justify-center">
+            <button id="btn-all" class="px-4 py-2.5 rounded-xl bg-gray-900 text-white font-black italic text-sm hover:scale-105 active:scale-95 transition">✓ Alle abhaken</button>
+            <button id="btn-none" class="px-4 py-2.5 rounded-xl bg-white border border-gray-200 text-gray-600 font-black italic text-sm hover:scale-105 active:scale-95 transition">Haken lösen</button>
+            <button id="btn-clean" class="px-4 py-2.5 rounded-xl bg-white border border-gray-200 text-gray-600 font-black italic text-sm hover:scale-105 active:scale-95 transition">🧹 Erledigte entfernen</button>
+            <button id="btn-clear" class="px-4 py-2.5 rounded-xl bg-white border border-red-200 text-red-500 font-black italic text-sm hover:scale-105 active:scale-95 transition">Liste leeren</button>
+        </div>
+    </div>
+
+    <script src="js/einkaufsliste.js"></script>
+    <script>
+        let ZUTATEN = null;
+
+        function groupByCategory(items) {
+            const groups = {};
+            items.forEach(i => {
+                (groups[i.category] = groups[i.category] || []).push(i);
+            });
+            return groups;
+        }
+
+        function render() {
+            const items = EK.getItems();
+            const list = document.getElementById('list');
+            const empty = document.getElementById('empty');
+            const actionbar = document.getElementById('actionbar');
+            const summary = document.getElementById('summary');
+
+            if (!items.length) {
+                list.innerHTML = '';
+                empty.classList.remove('hidden');
+                actionbar.classList.add('hidden');
+                summary.textContent = 'Noch nichts drauf.';
+                return;
+            }
+            empty.classList.add('hidden');
+            actionbar.classList.remove('hidden');
+
+            const done = items.filter(i => i.checked).length;
+            summary.textContent = `${done} / ${items.length} erledigt`;
+
+            const order = (ZUTATEN && ZUTATEN.reihenfolge) || [];
+            const emoji = (ZUTATEN && ZUTATEN.emoji) || {};
+            const groups = groupByCategory(items);
+            const cats = Object.keys(groups).sort((a, b) => {
+                const ia = order.indexOf(a), ib = order.indexOf(b);
+                return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+            });
+
+            list.innerHTML = cats.map(cat => {
+                const rows = groups[cat]
+                    .sort((a, b) => (a.checked - b.checked) || a.text.localeCompare(b.text))
+                    .map(i => `
+                    <label class="flex items-center gap-3 p-3.5 bg-gray-50 rounded-2xl border border-gray-100 cursor-pointer group/item">
+                        <input type="checkbox" data-id="${i.id}" ${i.checked ? 'checked' : ''} class="chk w-6 h-6 accent-orange-500 rounded-md shrink-0">
+                        <span class="flex-1 min-w-0">
+                            <span class="text-gray-700 font-medium text-base group-has-[:checked]/item:opacity-30 group-has-[:checked]/item:line-through transition-all">${i.text}</span>
+                            ${i.recipeTitle ? `<span class="block text-[11px] text-gray-400 font-bold uppercase tracking-wide truncate">· ${i.recipeTitle}</span>` : ''}
+                        </span>
+                        <button type="button" data-del="${i.id}" class="del text-gray-300 hover:text-red-500 text-xl font-black px-1 shrink-0">×</button>
+                    </label>
+                `).join('');
+                return `
+                    <details open class="group bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
+                        <summary class="list-none p-4 cursor-pointer flex justify-between items-center bg-gray-50/50">
+                            <h3 class="text-lg font-black italic flex items-center gap-2">${emoji[cat] || '🛒'} ${cat}
+                                <span class="text-xs text-gray-400 font-bold">${groups[cat].length}</span>
+                            </h3>
+                            <span class="transition-transform duration-300 group-open:rotate-180 text-orange-500 text-xl font-black">↓</span>
+                        </summary>
+                        <div class="p-3 space-y-2">${rows}</div>
+                    </details>`;
+            }).join('');
+
+            list.querySelectorAll('.chk').forEach(el =>
+                el.addEventListener('change', () => { EK.toggle(el.dataset.id); render(); }));
+            list.querySelectorAll('.del').forEach(el =>
+                el.addEventListener('click', e => { e.preventDefault(); EK.remove(el.dataset.del); render(); }));
+        }
+
+        document.getElementById('add-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const input = document.getElementById('add-input');
+            if (EK.addManual(input.value, ZUTATEN)) { input.value = ''; render(); }
+        });
+
+        document.getElementById('btn-all').addEventListener('click', () => { EK.checkAll(true); render(); });
+        document.getElementById('btn-none').addEventListener('click', () => { EK.checkAll(false); render(); });
+        document.getElementById('btn-clean').addEventListener('click', () => { EK.removeChecked(); render(); });
+        document.getElementById('btn-clear').addEventListener('click', () => {
+            if (confirm('Ganze Einkaufsliste löschen?')) { EK.clear(); render(); }
+        });
+        window.addEventListener('storage', render);
+
+        EK.loadZutaten().then(z => { ZUTATEN = z; render(); });
+    </script>
+</body>
+
+</html>
