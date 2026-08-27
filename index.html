@@ -124,8 +124,8 @@
             recipeGrid.innerHTML = recipes.map(r => `
                 <a href="rezept.html?id=${r.id}" class="recipe-card relative block rounded-[2.2rem] shadow-lg overflow-hidden group h-60 bg-gray-200 border border-white">
                     <img src="${r.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <button type="button" data-add="${r.id}" title="Auf die Einkaufsliste" aria-label="Auf die Einkaufsliste"
-                        class="add-card absolute top-3 left-3 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 backdrop-blur text-gray-800 shadow-xl hover:bg-white active:scale-90 transition text-sm">🛒</button>
+                    <button type="button" data-add="${r.id}" title="Zur Einkaufsliste hinzufügen" aria-label="Zur Einkaufsliste hinzufügen"
+                        class="add-card absolute top-3 left-3 z-20 text-2xl leading-none text-shadow hover:scale-110 active:scale-90 transition">🛒</button>
                     ${istNeu(r) ? `<div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-red-500 to-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xl uppercase tracking-tighter animate-neu">Neu ✨</div>` : ''}
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 p-5 flex flex-col justify-between text-white">
@@ -152,9 +152,8 @@
             if (!r) return;
             EK.loadZutaten().then(z => {
                 EK.addRecipe(r, z);
-                btn.textContent = '✓';
-                btn.classList.add('bg-gray-900', 'text-white');
-                setTimeout(() => { btn.textContent = '🛒'; btn.classList.remove('bg-gray-900', 'text-white'); }, 1400);
+                btn.textContent = '✅';
+                setTimeout(() => { btn.textContent = '🛒'; }, 1400);
             });
         });
 
