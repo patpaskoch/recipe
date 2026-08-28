@@ -102,9 +102,15 @@
                         <div id="rezept-anker" class="grid grid-cols-1 lg:grid-cols-3 gap-8 scroll-mt-6">
                             <div class="lg:col-span-1">
                                 <details open class="group bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
-                                    <summary class="list-none p-5 cursor-pointer flex justify-between items-center bg-gray-50/50">
+                                    <summary class="list-none p-5 cursor-pointer flex justify-between items-center gap-3 bg-gray-50/50 select-none">
                                         <h3 class="text-xl font-black italic">🛒 Zutaten</h3>
-                                        <span class="transition-transform duration-300 group-open:rotate-180 text-orange-500 text-xl font-black">↓</span>
+                                        <span class="flex items-center gap-1.5 shrink-0 text-orange-500">
+                                            <span class="text-[11px] font-normal not-italic tracking-wide">
+                                                <span class="group-open:hidden">Aufklappen</span>
+                                                <span class="hidden group-open:inline">Zuklappen</span>
+                                            </span>
+                                            <span class="transition-transform duration-300 group-open:rotate-180 text-lg font-black">↓</span>
+                                        </span>
                                     </summary>
                                     <div class="p-4 space-y-2">
                                         ${data.ingredients.map(ing => `
