@@ -137,13 +137,17 @@
     return getItems().filter(function (i) { return !i.checked; }).length;
   }
 
-  /* --- Badge in der Navigation --- */
+  function count() {
+    return getItems().length;
+  }
+
+  /* --- Badge in der Navigation: Gesamtzahl der Einträge, immer sichtbar (auch "0"). --- */
   function renderBadges() {
-    var n = openCount();
+    var n = count();
     var nodes = document.querySelectorAll(".ek-badge");
     for (var i = 0; i < nodes.length; i++) {
       nodes[i].textContent = n;
-      nodes[i].style.display = n > 0 ? "" : "none";
+      nodes[i].style.display = "";
     }
   }
 
@@ -164,6 +168,7 @@
     removeChecked: removeChecked,
     clear: clear,
     openCount: openCount,
+    count: count,
     renderBadges: renderBadges
   };
 })(window);

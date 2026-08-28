@@ -21,9 +21,9 @@
     <div class="max-w-6xl mx-auto">
         <nav class="flex gap-2 mb-8">
             <a href="index.html" class="px-5 py-2.5 rounded-2xl bg-orange-500 text-white shadow-md font-black italic">🍽️ Rezepte</a>
-            <a href="einkaufsliste.html" class="px-5 py-2.5 rounded-2xl bg-white border border-gray-200 shadow-sm font-black italic text-gray-600 hover:text-orange-500 transition flex items-center gap-2">
+            <a href="einkaufsliste.html" class="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white border border-gray-200 shadow-sm font-black italic text-gray-600 hover:text-orange-500 transition">
                 🛒 Einkaufsliste
-                <span class="ek-badge bg-orange-500 text-white text-xs font-black rounded-full min-w-[1.4rem] h-[1.4rem] inline-flex items-center justify-center px-1" style="display:none">0</span>
+                <span class="ek-badge absolute -top-2 -right-2 bg-orange-500 text-white text-[11px] font-black rounded-full min-w-[1.25rem] h-5 inline-flex items-center justify-center px-1 ring-2 ring-white">0</span>
             </a>
         </nav>
 
@@ -47,7 +47,7 @@
         <div class="mb-10 w-full">
             <div id="category-bar" class="flex overflow-x-auto no-scrollbar gap-3 pb-2 w-full scroll-smooth">
                 </div>
-            <div class="flex justify-end gap-2 mt-4">
+            <div class="hidden md:flex justify-end gap-2 mt-4">
                 <button id="scroll-left" class="flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition-all">◀</button>
                 <button id="scroll-right" class="flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition-all">▶</button>
             </div>
@@ -94,7 +94,11 @@
 
         function renderCategoryButtons() {
             const rawCategories = allRecipes.flatMap(r => r.category || []);
-            let uniqueCategories = ['Alle', 'Favoriten', ...new Set(rawCategories)].sort();
+            // "Alle" immer zuerst, dann "Favoriten", dann die echten Kategorien alphabetisch.
+            const rest = [...new Set(rawCategories)]
+                .filter(c => c !== 'Alle' && c !== 'Favoriten')
+                .sort((a, b) => a.localeCompare(b, 'de'));
+            const uniqueCategories = ['Alle', 'Favoriten', ...rest];
             
             categoryBar.innerHTML = uniqueCategories.map(cat => `
                 <button class="filter-btn shrink-0 ${cat === 'Alle' ? 'bg-orange-500 text-white shadow-md' : 'bg-white text-gray-700'} px-6 py-2 rounded-full shadow-sm border border-gray-200 hover:border-orange-300 transition font-bold active:scale-95 flex items-center gap-2" data-category="${cat}">
@@ -125,11 +129,13 @@
                 <a href="rezept.html?id=${r.id}" class="recipe-card relative block rounded-[2.2rem] shadow-lg overflow-hidden group h-60 bg-gray-200 border border-white">
                     <img src="${r.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     <button type="button" data-add="${r.id}" title="Zur Einkaufsliste hinzufügen" aria-label="Zur Einkaufsliste hinzufügen"
-                        class="add-card absolute top-3 left-3 z-20 text-2xl leading-none text-shadow hover:scale-110 active:scale-90 transition">🛒</button>
-                    ${istNeu(r) ? `<div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-red-500 to-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xl uppercase tracking-tighter animate-neu">Neu ✨</div>` : ''}
+                        class="add-card absolute top-3 right-3 z-20 text-2xl leading-none text-shadow hover:scale-110 active:scale-90 transition">+&#8202;🛒</button>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 p-5 flex flex-col justify-between text-white">
-                        <div class="flex flex-wrap gap-2">${(r.category || []).map(c => `<span class="bg-white/10 backdrop-blur-md text-[8px] uppercase font-black px-2 py-0.5 rounded-md">${c}</span>`).join('')}</div>
+                        <div class="flex flex-wrap gap-2 items-center pr-12">
+                            ${istNeu(r) ? `<span class="bg-gradient-to-r from-red-500 to-orange-500 text-white text-[8px] font-black px-2 py-0.5 rounded-md uppercase tracking-tighter animate-neu">Neu ✨</span>` : ''}
+                            ${(r.category || []).map(c => `<span class="bg-white/10 backdrop-blur-md text-[8px] uppercase font-black px-2 py-0.5 rounded-md">${c}</span>`).join('')}
+                        </div>
                         <div>
                             <h2 class="text-xl font-black italic mb-3 text-shadow">${r.title}</h2>
                             <div class="flex gap-2">
@@ -150,10 +156,11 @@
             e.stopPropagation();
             const r = allRecipes.find(x => x.id === btn.dataset.add);
             if (!r) return;
+            const orig = btn.innerHTML;
             EK.loadZutaten().then(z => {
                 EK.addRecipe(r, z);
                 btn.textContent = '✅';
-                setTimeout(() => { btn.textContent = '🛒'; }, 1400);
+                setTimeout(() => { btn.innerHTML = orig; }, 1400);
             });
         });
 
